@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
+import MarketingPage from "./(marketing)/page";
 
 export default function Home() {
   return (
     <div>
-      <Button className="bg-emerald-500" variant="secondary" size="lg">
-        Click Me
-      </Button>
+      <MarketingPage />
     </div>
   );
 }
