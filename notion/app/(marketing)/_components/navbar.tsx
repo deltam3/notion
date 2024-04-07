@@ -6,6 +6,8 @@ import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Spinner } from "@/components/spinner";
+import { Button } from "@/components/ui/button";
 
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
