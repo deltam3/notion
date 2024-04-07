@@ -32,16 +32,16 @@ export const ConfirmModal = ({ children, onConfirm }: ConfirmModalProps) => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>확실하신가요?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone.
+            이 행동은 비가역적입니다.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={(e) => e.stopPropagation()}>
-            Cancel
+            취소
           </AlertDialogCancel>
-          <AlertDialogAction onClick={handleConfirm}>Confirm</AlertDialogAction>
+          <AlertDialogAction onClick={handleConfirm}>확인</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -62,7 +62,7 @@ export const Item = ({
 
     toast.promise(promise, {
       loading: "쓰레기통으로 이동중...",
-      success: "노트가 쓰레기통으로 이동했씁니다.!",
+      success: "노트가 쓰레기통으로 이동했습니다.!",
       error: "노트 삭제에 실패했습니다.",
     });
   };

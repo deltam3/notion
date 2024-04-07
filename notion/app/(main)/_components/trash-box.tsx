@@ -73,7 +73,7 @@ export const TrashBox = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
-          placeholder="Filter by page title..."
+          placeholder="페이지 제목으로 필터하기"
         />
       </div>
       <div className="mt-2 px-1 pb-1">
