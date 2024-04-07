@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 
-import { Logo } from "./logo";
+import { Logo } from "./Logo";
 
 export const Footer = () => {
   return (
