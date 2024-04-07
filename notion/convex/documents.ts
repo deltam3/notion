@@ -9,7 +9,7 @@ export const archive = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -17,11 +17,11 @@ export const archive = mutation({
     const existingDocument = await ctx.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found");
+      throw new Error("발견되지않음");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이없음");
     }
 
     const recursiveArchive = async (documentId: Id<"documents">) => {
@@ -59,7 +59,7 @@ export const getSidebar = query({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지 않음");
     }
 
     const userId = identity.subject;
@@ -86,7 +86,7 @@ export const create = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지 않음");
     }
 
     const userId = identity.subject;
@@ -107,7 +107,7 @@ export const getTrash = query({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지 않음");
     }
 
     const userId = identity.subject;
@@ -129,7 +129,7 @@ export const restore = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -137,11 +137,11 @@ export const restore = mutation({
     const existingDocument = await ctx.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found");
+      throw new Error("발견되지않음");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이 없음");
     }
 
     const recursiveRestore = async (documentId: Id<"documents">) => {
@@ -212,7 +212,7 @@ export const getSearch = query({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -236,7 +236,7 @@ export const getById = query({
     const document = await ctx.db.get(args.documentId);
 
     if (!document) {
-      throw new Error("Not found");
+      throw new Error("발견되지 않음");
     }
 
     if (document.isPublished && !document.isArchived) {
@@ -244,13 +244,13 @@ export const getById = query({
     }
 
     if (!identity) {
-      throw new Error("Not authenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
 
     if (document.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이없음");
     }
 
     return document;
@@ -270,7 +270,7 @@ export const update = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Unauthenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -280,11 +280,11 @@ export const update = mutation({
     const existingDocument = await ctx.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found");
+      throw new Error("발견되지 않음");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이 없음");
     }
 
     const document = await ctx.db.patch(args.id, {
