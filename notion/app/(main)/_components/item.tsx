@@ -61,9 +61,9 @@ export const Item = ({
     const promise = archive({ id }).then(() => router.push("/documents"));
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "Note moved to trash!",
-      error: "Failed to archive note.",
+      loading: "쓰레기통으로 이동중...",
+      success: "노트가 쓰레기통으로 이동했씁니다.!",
+      error: "노트 삭제에 실패했습니다.",
     });
   };
 
@@ -87,9 +87,9 @@ export const Item = ({
     );
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note.",
+      loading: "새로운 노트를 생성중입니다...",
+      success: "새로운 노트가 생성되었습니다.",
+      error: "새로운 노트 생성에 실패했습니다.",
     });
   };
 
