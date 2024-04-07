@@ -37,9 +37,9 @@ export const TrashBox = () => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring note...",
-      success: "Note restored!",
-      error: " Failed to restore note.",
+      loading: "노트 복구중",
+      success: "노트 복구 성공!",
+      error: "노트 복구 실패",
     });
   };
 
@@ -47,9 +47,9 @@ export const TrashBox = () => {
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Deleting note...",
-      success: "Note deleted!",
-      error: " Failed to delete note.",
+      loading: "노트 삭제중",
+      success: "노트 삭제 성공!",
+      error: " 노트 삭제 실패",
     });
 
     if (params.documentId === documentId) {
@@ -78,7 +78,7 @@ export const TrashBox = () => {
       </div>
       <div className="mt-2 px-1 pb-1">
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
-          No documents found.
+          발견된 문서가 없습니다.
         </p>
         {filteredDocuments?.map((document) => (
           <div
