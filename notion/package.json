@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "@blocknote/core": "^0.9.6",
+    "@blocknote/react": "^0.9.6",
     "@clerk/clerk-react": "^4.30.10",
     "@clerk/nextjs": "^4.29.12",
     "@edgestore/react": "^0.1.6",

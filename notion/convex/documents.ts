@@ -301,7 +301,7 @@ export const removeIcon = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Unauthenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -309,11 +309,11 @@ export const removeIcon = mutation({
     const existingDocument = await ctx.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found");
+      throw new Error("못 찾음");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이없음");
     }
 
     const document = await ctx.db.patch(args.id, {
@@ -330,7 +330,7 @@ export const removeCoverImage = mutation({
     const identity = await ctx.auth.getUserIdentity();
 
     if (!identity) {
-      throw new Error("Unauthenticated");
+      throw new Error("인증되지않음");
     }
 
     const userId = identity.subject;
@@ -338,11 +338,11 @@ export const removeCoverImage = mutation({
     const existingDocument = await ctx.db.get(args.id);
 
     if (!existingDocument) {
-      throw new Error("Not found");
+      throw new Error("찾지못함");
     }
 
     if (existingDocument.userId !== userId) {
-      throw new Error("Unauthorized");
+      throw new Error("권한이 없음");
     }
 
     const document = await ctx.db.patch(args.id, {
