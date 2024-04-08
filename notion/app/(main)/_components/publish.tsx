@@ -116,7 +116,7 @@ export const Publish = ({ initialData }: PublishProps) => {
         ) : (
           <div className="flex flex-col items-center justify-center">
             <Globe className="h-8 w-8 text-muted-foreground mb-2" />
-            <p className="text-sm font-medium mb-2">Publish this note</p>
+            <p className="text-sm font-medium mb-2">이 노트를 퍼블리시하기</p>
             <span className="text-xs text-muted-foreground mb-4">공유하기</span>
             <Button
               disabled={isSubmitting}
@@ -124,7 +124,7 @@ export const Publish = ({ initialData }: PublishProps) => {
               className="w-full text-xs"
               size="sm"
             >
-              퍼블리시하긱
+              퍼블리시하기
             </Button>
           </div>
         )}
