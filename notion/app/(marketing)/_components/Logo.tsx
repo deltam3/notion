@@ -18,14 +18,7 @@ export const Logo = () => {
         alt="Logo"
         className="dark:hidden"
       />
-      <Image
-        src="/logo.svg"
-        height="40"
-        width="40"
-        alt="Logo"
-        className="hidden dark:block"
-      />
-      <p className={cn("font-semibold", font.className)}>노션</p>
+      <p className="font-semibold w-10">노션</p>
     </div>
   );
 };
