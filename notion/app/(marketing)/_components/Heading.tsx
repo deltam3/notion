@@ -12,32 +12,45 @@ export const Heading = () => {
   return (
     <div className="max-w-3xl space-y-4">
       <h1 className="text-3xl sm:text-5xl md:Text-6xl font-bold">
-        어떤 일이든 AI로 커넥트하세요.
+        함께쓰고,계획하고,즐기세요
       </h1>
-      <p>
-        하나의 워크스페이스에서 문서를 작성하고, 지식을 정리하고, 프로젝트를
-        관리하세요.
-      </p>
+      <p>Notion의 AI 기반 워크스페이스로 아이디어를 액션으로 옮기세요</p>
       {isLoading && (
         <div className="w-full flex items-center justify-center">
           <Spinner size="lg" />
         </div>
       )}
       {isAuthenticated && !isLoading && (
-        <Button asChild>
-          <Link href="/documents">
-            노션 사용하기
-            <ArrowRight className="h-4 w-4 ml-2" />
-          </Link>
-        </Button>
+        <div className="flex gap-2 justify-center">
+          <Button className="hero-btn" asChild>
+            <Link href="/documents">
+              노션 사용하기
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+          <Button asChild>
+            <Link href="#">
+              영업팀 문의하기
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
+          </Button>
+        </div>
       )}
       {!isAuthenticated && !isLoading && (
-        <SignInButton mode="modal">
-          <Button>
-            노션 무료로 다운받기
-            <ArrowRight className="h-4 w-4 ml-2" />
+        <div className="flex gap-2 justify-center">
+          <SignInButton mode="modal">
+            <Button className="hero-btn">
+              노션 무료로 다운받기
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Button>
+          </SignInButton>
+          <Button asChild>
+            <Link href="#">
+              영업팀 문의하기
+              <ArrowRight className="h-4 w-4 ml-2" />
+            </Link>
           </Button>
-        </SignInButton>
+        </div>
       )}
     </div>
   );

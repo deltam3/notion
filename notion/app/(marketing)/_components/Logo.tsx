@@ -18,7 +18,7 @@ export const Logo = () => {
         alt="Logo"
         className="dark:hidden"
       />
-      <p className="font-semibold w-10">노션</p>
+      <p className="font-semibold w-10">Notion</p>
     </div>
   );
 };

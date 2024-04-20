@@ -8,6 +8,10 @@ body,
   height: 100%;
 }
 
+.hero-btn {
+  background-color: #0081f2;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
