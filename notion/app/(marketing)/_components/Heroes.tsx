@@ -14,6 +14,7 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  Shuffle,
 } from "lucide-react";
 
 import featureAi from "../../../public/latest/features-ai.webp";
@@ -37,8 +38,15 @@ import testimonialBeforeTools from "../../../public/latest/tools-before-notion-V
 
 import testimonialMetalab from "../../../public/latest/metalab.png";
 
+import blockBoard from "../../../public/latest/features-board.webp";
+import blockGraph from "../../../public/latest/features-graph.webp";
+import blockTimeline from "../../../public/latest/features-timeline.webp";
+import blockCalendar from "../../../public/latest/features-calendar.webp";
+import blockGallery from "../../../public/latest/features-gallery.webp";
+import blockList from "../../../public/latest/features-list.webp";
+
 export const Heroes = () => {
-  const [features, setFeatures] = useState<Number>(0);
+  const [features, setFeatures] = useState<Number>(1);
 
   const featureHandler = (action: string) => {
     if (action === "prev") {
@@ -56,6 +64,13 @@ export const Heroes = () => {
       }
     }
   };
+
+  const [block, setBlock] = useState<Number>(0);
+
+  const blockHandler = (action: number) => {
+    setBlock(+action);
+  };
+
   return (
     <main>
       <section className="section-testimonial">
@@ -354,6 +369,94 @@ export const Heroes = () => {
             </figcaption>
           </figure>
         </div>
+      </section>
+      <section className="py-20">
+        <h2 className="text-[45px] font-bold">강력한 빌딩 블록</h2>
+        <div className="hero-block px-5 py-5 max-w-[98rem]">
+          <header className="text-left">
+            <Shuffle fill="blue" />
+            <h3 className="text-[18px]">
+              원하는 방식으로 보기 표시, 필터링, 정렬
+            </h3>
+            <p className="text-[16px]">
+              나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요. 어떤
+              프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수 있어요.
+            </p>
+          </header>
+          <div className="w-[300px] h-[300px]">
+            {block === 0 && (
+              <Image
+                src={blockBoard}
+                alt="board feature"
+                className="object-contain"
+              />
+            )}
+            {block === 1 && (
+              <Image
+                src={blockGraph}
+                fill
+                alt="graph feature"
+                className="object-contain"
+              />
+            )}
+            {block === 2 && (
+              <Image
+                src={blockTimeline}
+                fill
+                alt="timeline feature"
+                className="object-contain"
+              />
+            )}
+            {block === 3 && (
+              <Image
+                src={blockCalendar}
+                fill
+                alt="calendar feature"
+                className="object-contain"
+              />
+            )}
+            {block === 4 && (
+              <Image
+                src={blockGallery}
+                fill
+                alt="gallery feature"
+                className="object-contain"
+              />
+            )}
+            {block === 5 && (
+              <Image
+                src={blockList}
+                fill
+                alt="list feature"
+                className="object-contain"
+              />
+            )}
+          </div>
+          <div>
+            <nav className="flex">
+              <div>
+                <button>보드</button>
+              </div>
+              <div>
+                <button>표</button>
+              </div>
+              <div>
+                <button>타임라인</button>
+              </div>
+              <div>
+                <button>캘린더</button>
+              </div>
+              <div>
+                <button>갤러리</button>
+              </div>
+              <div>
+                <button>리스트</button>
+              </div>
+            </nav>
+          </div>
+        </div>
+
+        <div></div>
       </section>
     </main>
   );
