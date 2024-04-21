@@ -5,6 +5,7 @@
 html,
 body,
 :root {
+  /* font-size: 62.25%; */
   height: 100%;
 }
 
@@ -18,6 +19,13 @@ body,
   background-color: white;
   border-radius: 50%;
   font-weight: 400;
+}
+
+.flex-custom {
+  flex: 1 0 16%;
+}
+
+.flex-bottom {
 }
 
 @layer base {
