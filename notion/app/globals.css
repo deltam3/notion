@@ -12,6 +12,14 @@ body,
   background-color: #0081f2;
 }
 
+.feature-carousel-btn {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: 400;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
