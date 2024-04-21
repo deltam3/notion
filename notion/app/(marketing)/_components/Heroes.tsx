@@ -41,7 +41,7 @@ import Image from "next/image";
 export const Heroes = () => {
   return (
     <main>
-      <section className="">
+      <section className="section-testimonial">
         <figure className="flex flex-col justify-center align-middle">
           <blockquote>&quot;AI의 모든 것을 담은 앱&quot;</blockquote>
           <figcaption>
@@ -57,6 +57,9 @@ export const Heroes = () => {
             </a>
           </figcaption>
         </figure>
+      </section>
+      <section className="section-features-5">
+        <div className=""></div>
       </section>
     </main>
   );
