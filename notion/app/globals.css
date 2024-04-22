@@ -40,6 +40,12 @@ body,
   transition: 150ms background linear;
 }
 
+.selected-white {
+  background: white;
+  transition: background 0.15s;
+  box-shadow: inset 0 0 0 2px var(--color-block);
+}
+
 .hov-gray {
   /* background: rgba(0, 0, 0, 0.04); */
 }

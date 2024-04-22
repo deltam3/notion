@@ -52,6 +52,19 @@ import tinderIcon from "../../../public/latest/match-group.png";
 import blockLeft from "../../../public/latest/block-left.webp";
 import blockRight from "../../../public/latest/block-right.webp";
 
+import teamEng from "../../../public/latest/engineering-v2_1.png";
+import teamDesign from "../../../public/latest/design-v2_1.png";
+import teamProduct from "../../../public/latest/product.png";
+import teamMarketing from "../../../public/latest/marketing.png";
+import teamManagement from "../../../public/latest/manage.png";
+import teamHr from "../../../public/latest/HR.png";
+import teamEngScreenshot from "../../../public/latest/teamEng.webp";
+import teamDesignScreenshot from "../../../public/latest/teamDesign.webp";
+import teamProductScreenshot from "../../../public/latest/teamMarketing.webp";
+import teamMarketingScreenshot from "../../../public/latest/teamManagement.webp";
+import teamManagementScreenshot from "../../../public/latest/teamManagement.webp";
+import teamHrScreenshot from "../../../public/latest/teamHr.webp";
+
 export const Heroes = () => {
   const [features, setFeatures] = useState<Number>(1);
 
@@ -77,6 +90,8 @@ export const Heroes = () => {
   const blockHandler = (action: number) => {
     setBlock(+action);
   };
+
+  const [team, setTeam] = useState<Number>(0);
 
   return (
     <main>
@@ -576,6 +591,138 @@ export const Heroes = () => {
               </div>
             </figcaption>
           </figure>
+        </div>
+      </section>
+      <section className="py-20">
+        <div className="max-w-[99rem] px-[3.2rem]">
+          <h2 className="text-[4.5rem] font-bold">모든 팀을 위한 협업툴</h2>
+          <div className="flex justify-center gap-20">
+            <div
+              className={clsx(
+                "hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem] max-w-[15.7rem] max-h-[12.5rem]",
+                {
+                  "selected-white": team === 0,
+                }
+              )}
+            >
+              <button onClick={() => setTeam(0)}>
+                <div>
+                  <Image src={teamEng} alt="feature for Engineering teams" />
+                </div>
+                <p>엔지니어링</p>
+              </button>
+            </div>
+            <div
+              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+                "selected-white": team === 1,
+              })}
+            >
+              <button onClick={() => setTeam(1)}>
+                <div>
+                  <Image src={teamDesign} alt="feature for Design teams" />
+                </div>
+                <p>디자인</p>
+              </button>
+            </div>
+            <div
+              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+                "selected-white": team === 2,
+              })}
+            >
+              <button onClick={() => setTeam(2)}>
+                <div>
+                  <Image src={teamProduct} alt="feature for Product teams" />
+                </div>
+                <p>프로덕트</p>
+              </button>
+            </div>
+            <div
+              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+                "selected-white": team === 3,
+              })}
+            >
+              <button onClick={() => setTeam(3)}>
+                <div>
+                  <Image
+                    src={teamMarketing}
+                    alt="feature for Management teams"
+                  />
+                </div>
+                <p>마케팅</p>
+              </button>
+            </div>
+            <div
+              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+                "selected-white": team === 4,
+              })}
+            >
+              <button onClick={() => setTeam(4)}>
+                <div>
+                  <Image
+                    src={teamManagement}
+                    alt="feature for Management teams"
+                  />
+                </div>
+                <p>운영</p>
+              </button>
+            </div>
+            <div
+              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+                "selected-white": team === 5,
+              })}
+            >
+              <button onClick={() => setTeam(5)}>
+                <div>
+                  <Image src={teamHr} alt="feature for Hr teams" />
+                </div>
+                <p>HR</p>
+              </button>
+            </div>
+          </div>
+          <div className="flex justify-center w-[100%]">
+            {team === 0 && (
+              <Image
+                src={teamEngScreenshot}
+                alt="engineering team using notion"
+                className="object-contain"
+              />
+            )}
+            {team === 1 && (
+              <Image
+                src={teamDesignScreenshot}
+                alt="design team using notion"
+                className="object-contain"
+              />
+            )}
+            {team === 2 && (
+              <Image
+                src={teamProductScreenshot}
+                alt="product team using notion"
+                className="object-contain"
+              />
+            )}
+            {team === 3 && (
+              <Image
+                src={teamMarketingScreenshot}
+                alt="marketing team using notion"
+                className="object-contain"
+              />
+            )}
+            {team === 4 && (
+              <Image
+                src={teamManagementScreenshot}
+                alt="management team using notion"
+                className="object-contain"
+              />
+            )}
+            {team === 5 && (
+              <Image
+                src={teamHrScreenshot}
+                alt="hr team using notion"
+                className="object-contain"
+              />
+            )}
+          </div>
         </div>
       </section>
     </main>
