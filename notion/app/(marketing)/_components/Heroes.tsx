@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 
 import {
   Sparkle,
@@ -373,17 +374,17 @@ export const Heroes = () => {
       <section className="py-20">
         <h2 className="text-[45px] font-bold">강력한 빌딩 블록</h2>
         <div className="hero-block px-5 py-5 max-w-[98rem]">
-          <header className="text-left">
-            <Shuffle fill="blue" />
-            <h3 className="text-[18px]">
+          <header className="text-left py-5">
+            <Shuffle fill="#0081f2" />
+            <h3 className="text-[18px] text-bold pb-5">
               원하는 방식으로 보기 표시, 필터링, 정렬
             </h3>
-            <p className="text-[16px]">
+            <p className="text-[16px] max-w-[30rem]">
               나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요. 어떤
               프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수 있어요.
             </p>
           </header>
-          <div className="w-[300px] h-[300px]">
+          <div className="w-[922px] h-[577px]">
             {block === 0 && (
               <Image
                 src={blockBoard}
@@ -394,7 +395,6 @@ export const Heroes = () => {
             {block === 1 && (
               <Image
                 src={blockGraph}
-                fill
                 alt="graph feature"
                 className="object-contain"
               />
@@ -402,7 +402,6 @@ export const Heroes = () => {
             {block === 2 && (
               <Image
                 src={blockTimeline}
-                fill
                 alt="timeline feature"
                 className="object-contain"
               />
@@ -410,7 +409,6 @@ export const Heroes = () => {
             {block === 3 && (
               <Image
                 src={blockCalendar}
-                fill
                 alt="calendar feature"
                 className="object-contain"
               />
@@ -418,7 +416,6 @@ export const Heroes = () => {
             {block === 4 && (
               <Image
                 src={blockGallery}
-                fill
                 alt="gallery feature"
                 className="object-contain"
               />
@@ -426,37 +423,90 @@ export const Heroes = () => {
             {block === 5 && (
               <Image
                 src={blockList}
-                fill
                 alt="list feature"
                 className="object-contain"
               />
             )}
           </div>
           <div>
-            <nav className="flex">
-              <div>
-                <button>보드</button>
+            <nav className="flex justify-center gap-5">
+              {/* <div className="border-[0.9px] rounded-md mt-[2px]"> */}
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                  "selected-gray": block === 0,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(0)}
+                >
+                  보드
+                </button>
               </div>
-              <div>
-                <button>표</button>
+
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                  "selected-gray": block === 1,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(1)}
+                >
+                  표
+                </button>
               </div>
-              <div>
-                <button>타임라인</button>
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                  "selected-gray": block === 2,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(2)}
+                >
+                  타임라인
+                </button>
               </div>
-              <div>
-                <button>캘린더</button>
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                  "selected-gray": block === 3,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(3)}
+                >
+                  캘린더
+                </button>
               </div>
-              <div>
-                <button>갤러리</button>
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
+                  "selected-gray": block === 4,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(4)}
+                >
+                  갤러리
+                </button>
               </div>
-              <div>
-                <button>리스트</button>
+              <div
+                className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
+                  "selected-gray": block === 5,
+                })}
+              >
+                <button
+                  className="py-[3.2px] px-[9.6px]"
+                  onClick={() => setBlock(5)}
+                >
+                  리스트
+                </button>
               </div>
             </nav>
           </div>
         </div>
-
-        <div></div>
       </section>
     </main>
   );

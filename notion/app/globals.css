@@ -30,9 +30,18 @@ body,
 }
 
 .hero-block {
-  /* background-color: var(--color-block); */
+  background-color: var(--color-block);
   border-radius: 12px;
-  background-color: red;
+  /* background-color: red; */
+}
+
+.selected-gray {
+  background: rgba(0, 0, 0, 0.1);
+  transition: 150ms background linear;
+}
+
+.hov-gray {
+  /* background: rgba(0, 0, 0, 0.04); */
 }
 
 @layer base {
