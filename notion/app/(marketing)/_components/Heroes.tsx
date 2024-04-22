@@ -16,6 +16,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Shuffle,
+  Eye,
+  Palette,
 } from "lucide-react";
 
 import featureAi from "../../../public/latest/features-ai.webp";
@@ -39,12 +41,16 @@ import testimonialBeforeTools from "../../../public/latest/tools-before-notion-V
 
 import testimonialMetalab from "../../../public/latest/metalab.png";
 
+import blockTop from "../../../public/latest/topPeek.png";
 import blockBoard from "../../../public/latest/features-board.webp";
 import blockGraph from "../../../public/latest/features-graph.webp";
 import blockTimeline from "../../../public/latest/features-timeline.webp";
 import blockCalendar from "../../../public/latest/features-calendar.webp";
 import blockGallery from "../../../public/latest/features-gallery.webp";
 import blockList from "../../../public/latest/features-list.webp";
+import tinderIcon from "../../../public/latest/match-group.png";
+import blockLeft from "../../../public/latest/block-left.webp";
+import blockRight from "../../../public/latest/block-right.webp";
 
 export const Heroes = () => {
   const [features, setFeatures] = useState<Number>(1);
@@ -339,19 +345,19 @@ export const Heroes = () => {
               />
             </div>
           </div>
-          <div className="relative w-[500px] h-[50px]">
-            <div className="relative w-[500px] h-[50px] left-[13%] bottom-[30%]">
+          <div className="relative w-[50rem] h-[5rem] mx-auto right-[16%]">
+            <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[30%]">
               <Image
                 src={testimonialPencilmark}
-                className="absolute top-[3%] mix-blend-multiply"
+                className="absolute mix-blend-multiply"
                 alt="strikethrough pencilmark"
               />
             </div>
-            <div className="relative w-[500px] h-[50px] left-[10%] bottom-[75px] ">
+            <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[50%] ">
               <Image
                 src={testimonialBeforeTools}
                 alt="other alternative tools used before notion"
-                className="mix-blend-multiply"
+                className="absolute mix-blend-multiply"
               />
             </div>
           </div>
@@ -363,7 +369,7 @@ export const Heroes = () => {
               <div className="w-[127px] h-[35px] my-auto">
                 <Image src={testimonialMetalab} alt="metalab logo" />
               </div>
-              <div>
+              <div className="text-left">
                 <p>Justin Watt</p>
                 <p>MetaLab 운영 및 마케팅팀 이사</p>
               </div>
@@ -372,140 +378,204 @@ export const Heroes = () => {
         </div>
       </section>
       <section className="py-20">
-        <h2 className="text-[45px] font-bold">강력한 빌딩 블록</h2>
-        <div className="hero-block px-5 py-5 max-w-[98rem]">
-          <header className="text-left py-5">
-            <Shuffle fill="#0081f2" />
-            <h3 className="text-[18px] text-bold pb-5">
-              원하는 방식으로 보기 표시, 필터링, 정렬
-            </h3>
-            <p className="text-[16px] max-w-[30rem]">
-              나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요. 어떤
-              프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수 있어요.
-            </p>
-          </header>
-          <div className="w-[922px] h-[577px]">
-            {block === 0 && (
-              <Image
-                src={blockBoard}
-                alt="board feature"
-                className="object-contain"
-              />
-            )}
-            {block === 1 && (
-              <Image
-                src={blockGraph}
-                alt="graph feature"
-                className="object-contain"
-              />
-            )}
-            {block === 2 && (
-              <Image
-                src={blockTimeline}
-                alt="timeline feature"
-                className="object-contain"
-              />
-            )}
-            {block === 3 && (
-              <Image
-                src={blockCalendar}
-                alt="calendar feature"
-                className="object-contain"
-              />
-            )}
-            {block === 4 && (
-              <Image
-                src={blockGallery}
-                alt="gallery feature"
-                className="object-contain"
-              />
-            )}
-            {block === 5 && (
-              <Image
-                src={blockList}
-                alt="list feature"
-                className="object-contain"
-              />
-            )}
-          </div>
-          <div>
-            <nav className="flex justify-center gap-5">
-              {/* <div className="border-[0.9px] rounded-md mt-[2px]"> */}
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
-                  "selected-gray": block === 0,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(0)}
-                >
-                  보드
-                </button>
+        <div className="max-w-[99rem] px-[3.2rem] relative">
+          <Image
+            className="absolute top-[-5%]"
+            src={blockTop}
+            alt="two people peaking"
+          />
+          <h2 className="text-[45px] font-bold">강력한 빌딩 블록</h2>
+          <div className="flex flex-col gap-5">
+            <div className="hero-block px-5 py-5 max-w-[98rem]">
+              <header className="text-left py-5">
+                <Shuffle fill="#0081f2" />
+                <h3 className="text-[18px] text-bold pb-5">
+                  원하는 방식으로 보기 표시, 필터링, 정렬
+                </h3>
+                <p className="text-[16px] max-w-[30rem]">
+                  나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요.
+                  어떤 프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수
+                  있어요.
+                </p>
+              </header>
+              <div className="max-w-[92.2rem] max-h-[57.7rem] mx-auto pb-5">
+                {block === 0 && (
+                  <Image
+                    src={blockBoard}
+                    alt="board feature"
+                    className="object-contain"
+                  />
+                )}
+                {block === 1 && (
+                  <Image
+                    src={blockGraph}
+                    alt="graph feature"
+                    className="object-contain"
+                  />
+                )}
+                {block === 2 && (
+                  <Image
+                    src={blockTimeline}
+                    alt="timeline feature"
+                    className="object-contain"
+                  />
+                )}
+                {block === 3 && (
+                  <Image
+                    src={blockCalendar}
+                    alt="calendar feature"
+                    className="object-contain"
+                  />
+                )}
+                {block === 4 && (
+                  <Image
+                    src={blockGallery}
+                    alt="gallery feature"
+                    className="object-contain"
+                  />
+                )}
+                {block === 5 && (
+                  <Image
+                    src={blockList}
+                    alt="list feature"
+                    className="object-contain"
+                  />
+                )}
               </div>
+              <div>
+                <nav className="flex justify-center gap-5">
+                  {/* <div className="border-[0.9px] rounded-md mt-[2px]"> */}
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                      "selected-gray": block === 0,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(0)}
+                    >
+                      보드
+                    </button>
+                  </div>
 
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
-                  "selected-gray": block === 1,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(1)}
-                >
-                  표
-                </button>
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                      "selected-gray": block === 1,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(1)}
+                    >
+                      표
+                    </button>
+                  </div>
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                      "selected-gray": block === 2,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(2)}
+                    >
+                      타임라인
+                    </button>
+                  </div>
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px]", {
+                      "selected-gray": block === 3,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(3)}
+                    >
+                      캘린더
+                    </button>
+                  </div>
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
+                      "selected-gray": block === 4,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(4)}
+                    >
+                      갤러리
+                    </button>
+                  </div>
+                  <div
+                    className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
+                      "selected-gray": block === 5,
+                    })}
+                  >
+                    <button
+                      className="py-[3.2px] px-[9.6px]"
+                      onClick={() => setBlock(5)}
+                    >
+                      리스트
+                    </button>
+                  </div>
+                </nav>
               </div>
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
-                  "selected-gray": block === 2,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(2)}
-                >
-                  타임라인
-                </button>
+            </div>
+            <div className="flex justify-between gap-[2.4rem] pb-[2.5rem]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem]">
+                <header className="text-left">
+                  <Eye fill="#0081f2" />
+                  <p className="text-[1.8rem] text-bold">관심 정보 지정</p>
+                  <p className="max-w-[30rem]">
+                    필요에 맞게 라벨, 태그, 담당자 등을 지정해 모든 사람들이
+                    관련 정보를 볼 수 있게 하세요.
+                  </p>
+                </header>
+                <div>
+                  <Image
+                    src={blockLeft}
+                    alt="block functionality"
+                    className="p-[4px]"
+                  />
+                </div>
               </div>
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px]", {
-                  "selected-gray": block === 3,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(3)}
-                >
-                  캘린더
-                </button>
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem]">
+                <header className="text-left">
+                  <Palette fill="#0081f2" />
+                  <p className="text-[1.8rem] text-bold">
+                    원하는 대로 페이지를 구성하고 아이디어 공유
+                  </p>
+                  <p>
+                    Notion에서는 이미지, 토글, 할 일, 임베드된 데이터베이스까지
+                    모든 것이 드래그 & 드롭입니다.
+                  </p>
+                </header>
+                <div className="relative">
+                  <Image
+                    src={blockRight}
+                    alt="block functionality"
+                    className="p-[4px]"
+                  />
+                </div>
               </div>
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
-                  "selected-gray": block === 4,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(4)}
-                >
-                  갤러리
-                </button>
-              </div>
-              <div
-                className={clsx("border-[0.9px] rounded-md mt-[2px] ", {
-                  "selected-gray": block === 5,
-                })}
-              >
-                <button
-                  className="py-[3.2px] px-[9.6px]"
-                  onClick={() => setBlock(5)}
-                >
-                  리스트
-                </button>
-              </div>
-            </nav>
+            </div>
           </div>
+
+          <figure>
+            <blockquote className="text-[2.4rem] mx-auto max-w-[60%]">
+              "Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는 만큼
+              간단하게 또는 정교하게 만들어 사용할 수 있어요."
+            </blockquote>
+            <figcaption className="flex justify-center align-middle gap-3">
+              <div className="max-w-[3.3rem] max-h-[3.6rem]">
+                <Image src={tinderIcon} alt="match group icon" />
+              </div>
+              <div className="flex flex-col justify-center align-middle text-left">
+                <p className="font-bold">Rahim Makani</p>
+                <p>Match Group 프로덕트 디렉터</p>
+              </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
     </main>
