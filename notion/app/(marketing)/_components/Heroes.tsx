@@ -20,6 +20,8 @@ import {
   Palette,
 } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+
 import featureAi from "../../../public/latest/features-ai.webp";
 import featureDoc from "../../../public/latest/features-document.webp";
 import featureWiki from "../../../public/latest/features-wiki.png";
@@ -64,6 +66,10 @@ import teamProductScreenshot from "../../../public/latest/teamMarketing.webp";
 import teamMarketingScreenshot from "../../../public/latest/teamManagement.webp";
 import teamManagementScreenshot from "../../../public/latest/teamManagement.webp";
 import teamHrScreenshot from "../../../public/latest/teamHr.webp";
+
+import communityFaces from "../../../public/latest/faces.png";
+
+import ctaParade from "../../../public/latest/notion-parade.png";
 
 export const Heroes = () => {
   const [features, setFeatures] = useState<Number>(1);
@@ -722,6 +728,67 @@ export const Heroes = () => {
                 className="object-contain"
               />
             )}
+          </div>
+        </div>
+      </section>
+      {/* <section className="py-20">
+        <div className="max-w-[99rem] px-[3.2rem]">
+          <div className="flex flex-col justify-center text-center max-w-[66rem] mx-auto">
+            <div className="max-w-[66rem] mx-auto">
+              <h2 className="text-[4.5rem] leading-[4.9rem] -tracking-[0.12rem] font-bold">
+                글로벌 커뮤니티와 함께 창의성을 발휘하세요
+              </h2>
+              <p className="text-[1.6rem]">
+                활발한 Notion 커뮤니티에서는 콘텐츠를 만들고, 트레이닝 코스를
+                제공하고, 이벤트를 주최하는 등의 활동을 주도합니다.
+              </p>
+              <Link href="#" className="flex justify-center align-middle">
+                <span className="text-blue-600 my-auto">자세히 알아보기</span>
+                <ArrowRight fill="blue" />
+              </Link>
+            </div>
+          </div>
+          <div className="">
+            <Image src={communityFaces} alt="notion users" />
+          </div>
+          <div className="flex justify-center gap-3">
+            <div className="hero-block">
+              <p>1M+</p>
+              <p>커뮤니티 멤버</p>
+            </div>
+            <div className="hero-block">
+              <p>150+</p>
+              <p>커뮤니티 그룹</p>
+            </div>
+            <div className="hero-block">
+              <p>50+</p>
+              <p>함께하는 국가</p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      <section className="py-20">
+        <div className="max-w-[99rem] px-[3.2rem]">
+          <h2 className="text-[6.1rem] mb-4 font-bold">무료로 시작하기</h2>
+          <p className="mb-4 text-[1.6rem]">
+            요금을 지불하고 팀원을 추가하기 전에 무료로 충분히 사용해 보세요.
+          </p>
+          <div className="flex justify-center gap-4">
+            <button className="bg-black text-white py-2 px-4 rounded-md text-[1.6rem]">
+              무료로 Notion 사용하기
+            </button>
+            <button className="flex align-middle">
+              <p className="text-blue-600 my-auto text-[1.6rem]">
+                영업팀 문의하기 &rarr;
+              </p>
+            </button>
+          </div>
+          <div>
+            <Image
+              src={ctaParade}
+              alt="notion parade"
+              className="max-w-[67rem] max-h-[33rem] mx-auto"
+            />
           </div>
         </div>
       </section>
