@@ -455,7 +455,8 @@ export const Heroes = () => {
             </div>
             <figure className="flex flex-col justify-center align-middle px-[3.2rem]">
               <blockquote className="text-[1.8rem] md:text-[2.4rem]">
-                "Notion 하나로 10개 이상의 기존 툴을 대체할 수 있었어요."
+                &ldquo;Notion 하나로 10개 이상의 기존 툴을 대체할 수
+                있었어요.&ldquo;
               </blockquote>
               <figcaption className="flex justify-center align-middle gap-4 ">
                 <div className="w-[127px] h-[35px] my-auto">
@@ -661,8 +662,8 @@ export const Heroes = () => {
 
           <figure className="w-[80%] mx-auto">
             <blockquote className="text-[2.4rem] mx-auto w-[60%] py-[2rem]">
-              "Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는 만큼
-              간단하게 또는 정교하게 만들어 사용할 수 있어요."
+              &ldquo;Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는
+              만큼 간단하게 또는 정교하게 만들어 사용할 수 있어요.&ldquo;
             </blockquote>
             <figcaption className="flex flex-col md:flex-row justify-center align-middle gap-3 mx-auto">
               <div className="w-[3.3rem] h-[3.6rem] mx-auto sm:mx-0 relative">
