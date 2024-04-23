@@ -102,21 +102,23 @@ export const Heroes = () => {
   return (
     <main>
       <section className="section-testimonial">
-        <figure className="flex flex-col justify-center align-middle">
-          <blockquote>&quot;AI의 모든 것을 담은 앱&quot;</blockquote>
-          <figcaption>
-            <a href="#" className="flex justify-center">
-              <div className="relative h-[50px] w-[100px] md:block">
-                <Image
-                  src="/latest/forbes.png"
-                  alt="forbes"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </a>
-          </figcaption>
-        </figure>
+        <div className="max-w-[99rem] px-[3.2rem]">
+          <figure className="flex flex-col justify-center align-middle">
+            <blockquote>&quot;AI의 모든 것을 담은 앱&quot;</blockquote>
+            <figcaption>
+              <a href="#" className="flex justify-center">
+                <div className="relative h-[50px] w-[100px] md:block">
+                  <Image
+                    src="/latest/forbes.png"
+                    alt="forbes"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </a>
+            </figcaption>
+          </figure>
+        </div>
       </section>
       <section className="py-20">
         <div className="flex justify-center gap-16">
