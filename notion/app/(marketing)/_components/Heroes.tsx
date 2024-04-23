@@ -104,7 +104,9 @@ export const Heroes = () => {
       <section className="section-testimonial">
         <div className="max-w-[99rem] px-[3.2rem]">
           <figure className="flex flex-col justify-center align-middle">
-            <blockquote>&quot;AI의 모든 것을 담은 앱&quot;</blockquote>
+            <blockquote className="text-[4.3rem]">
+              &quot;AI의 모든 것을 담은 앱&quot;
+            </blockquote>
             <figcaption>
               <a href="#" className="flex justify-center">
                 <div className="relative h-[50px] w-[100px] md:block">
@@ -121,312 +123,385 @@ export const Heroes = () => {
         </div>
       </section>
       <section className="py-20">
-        <div className="flex justify-center gap-16">
-          <div className="flex flex-col gap-4 justify-center align-middle">
-            <button
+        <div className="max-w-[99rem]">
+          <div className="flex justify-center gap-16 pb-[1.5rem]">
+            <div className="flex flex-col gap-4 justify-center align-middle">
+              <button
+                className="flex flex-col gap-4 justify-center align-middle"
+                onClick={() => setFeatures(0)}
+              >
+                {features === 0 ? (
+                  <Sparkle fill="purple" className="my-0 mx-auto" />
+                ) : (
+                  <Sparkle className="my-0 mx-auto" />
+                )}
+                <p className="mx-auto text-[2.4rem]">AI</p>
+              </button>
+            </div>
+            <div className="flex flex-col gap-4 justify-center align-middle">
+              <button
+                className="flex flex-col gap-4 justify-center align-middle"
+                onClick={() => setFeatures(1)}
+              >
+                {features === 1 ? (
+                  <FileText fill="yellow" className="my-0 mx-auto" />
+                ) : (
+                  <FileText className="my-0 mx-auto" />
+                )}
+                <p className="mx-auto text-[2.4rem]">문서</p>
+              </button>
+            </div>
+            <div>
+              <button
+                className="flex flex-col gap-4 justify-center align-middle"
+                onClick={() => setFeatures(2)}
+              >
+                <button className="flex flex-col gap-4 justify-center align-middle">
+                  {features === 2 ? (
+                    <BookOpenText fill="orange" className="my-0 mx-auto" />
+                  ) : (
+                    <BookOpenText className="my-0 mx-auto" />
+                  )}
+                  <p className="mx-auto text-[2.4rem]">위키</p>
+                </button>
+              </button>
+            </div>
+            <div
               className="flex flex-col gap-4 justify-center align-middle"
-              onClick={() => setFeatures(0)}
-            >
-              {features === 0 ? (
-                <Sparkle fill="purple" className="my-0 mx-auto" />
-              ) : (
-                <Sparkle className="my-0 mx-auto" />
-              )}
-              <p>AI</p>
-            </button>
-          </div>
-          <div className="flex flex-col gap-4 justify-center align-middle">
-            <button
-              className="flex flex-col gap-4 justify-center align-middle"
-              onClick={() => setFeatures(1)}
-            >
-              {features === 1 ? (
-                <FileText fill="yellow" className="my-0 mx-auto" />
-              ) : (
-                <FileText className="my-0 mx-auto" />
-              )}
-              <p>문서</p>
-            </button>
-          </div>
-          <div>
-            <button
-              className="flex flex-col gap-4 justify-center align-middle"
-              onClick={() => setFeatures(2)}
+              onClick={() => setFeatures(3)}
             >
               <button className="flex flex-col gap-4 justify-center align-middle">
-                {features === 2 ? (
-                  <BookOpenText fill="orange" className="my-0 mx-auto" />
+                {features === 3 ? (
+                  <Target fill="blue" className="my-0 mx-auto" />
                 ) : (
-                  <BookOpenText className="my-0 mx-auto" />
+                  <FileText className="my-0 mx-auto" />
                 )}
-                <p>위키</p>
+                <p className="mx-auto text-[2.4rem]">프로젝트</p>
               </button>
-            </button>
-          </div>
-          <div
-            className="flex flex-col gap-4 justify-center align-middle"
-            onClick={() => setFeatures(3)}
-          >
-            <button className="flex flex-col gap-4 justify-center align-middle">
-              {features === 3 ? (
-                <Target fill="blue" className="my-0 mx-auto" />
-              ) : (
-                <FileText className="my-0 mx-auto" />
-              )}
-              <p>프로젝트</p>
-            </button>
-          </div>
-          <div
-            className="flex flex-col gap-4 justify-center align-middle"
-            onClick={() => setFeatures(4)}
-          >
-            <button className="flex flex-col gap-4 justify-center align-middle">
-              {features === 4 ? (
-                <Calendar fill="red" className="my-0 mx-auto" />
-              ) : (
-                <Calendar className="my-0 mx-auto" />
-              )}
-              <p>캘린더</p>
-            </button>
-          </div>
-        </div>
-        <div>
-          <div className="flex justify-center gap-4">
-            {features === 0 && (
-              <>
-                <span>무엇이든 물어보세요. Notion이 대답해 드려요.</span>
-                <Link href="#" className="flex">
-                  <span className="text-purple-600">자세히 알아보기</span>
-                  <ArrowRight />
-                </Link>
-              </>
-            )}
-            {features === 1 && (
-              <>
-                <span>심플하고 파워풀한 차세대 메모와 문서.</span>
-                <Link href="#" className="flex">
-                  <span className="text-yellow-600">자세히 알아보기</span>
-                  <ArrowRight />
-                </Link>
-              </>
-            )}
-
-            {features === 2 && (
-              <>
-                <span>지식을 한 곳에 모으고더 이상 찾아 헤매지 마세요</span>
-                <Link href="#" className="flex">
-                  <span className="text-orange-600">자세히 알아보기</span>
-                  <ArrowRight />
-                </Link>
-              </>
-            )}
-
-            {features === 3 && (
-              <>
-                <span>복잡한 프로젝트를 깔끔하게 관리하세요.</span>
-                <Link href="#" className="flex">
-                  <span className="text-blue-600">자세히 알아보기</span>
-                  <ArrowRight />
-                </Link>
-              </>
-            )}
-
-            {features === 4 && (
-              <>
-                <span>시간과 프로젝트를 함께 관리하세요.</span>
-                <Link href="#" className="flex">
-                  <span className="text-red-600">자세히 알아보기</span>
-                  <ArrowRight />
-                </Link>
-              </>
-            )}
+            </div>
+            <div
+              className="flex flex-col gap-4 justify-center align-middle"
+              onClick={() => setFeatures(4)}
+            >
+              <button className="flex flex-col gap-4 justify-center align-middle">
+                {features === 4 ? (
+                  <Calendar fill="red" className="my-0 mx-auto" />
+                ) : (
+                  <Calendar className="my-0 mx-auto" />
+                )}
+                <p className="mx-auto text-[2.4rem]">캘린더</p>
+              </button>
+            </div>
           </div>
           <div>
-            <div className="relative w-[800px] h-[500px] mx-auto">
-              <button
-                className="absolute z-10 left-0 w-1/2 h-full opacity-0 hover:opacity-100"
-                onClick={() => featureHandler("prev")}
-              >
-                <div className="absolute left-7 z-20">
-                  <ChevronLeft className="feature-carousel-btn" />
-                </div>
-              </button>
-              <div>
-                {features === 0 && (
-                  <Image src={featureAi} fill alt="ai feature" />
-                )}
+            <div className="flex justify-center gap-4">
+              {features === 0 && (
+                <>
+                  <span className="text-[1.6rem]">
+                    무엇이든 물어보세요. Notion이 대답해 드려요.
+                  </span>
+                  <Link href="#" className="flex">
+                    <span className="text-purple-600 text-[1.6rem]">
+                      자세히 알아보기 &rarr;
+                    </span>
+                  </Link>
+                </>
+              )}
+              {features === 1 && (
+                <>
+                  <span className="text-[1.6rem]">
+                    심플하고 파워풀한 차세대 메모와 문서.
+                  </span>
+                  <Link href="#" className="flex">
+                    <span className="text-yellow-600 text-[1.6rem]">
+                      자세히 알아보기 &rarr;
+                    </span>
+                  </Link>
+                </>
+              )}
 
-                {features === 1 && (
-                  <Image src={featureDoc} fill alt="document feature" />
-                )}
-                {features === 2 && (
-                  <Image src={featureWiki} fill alt="wiki feature" />
-                )}
-                {features === 3 && (
-                  <Image src={featureProject} fill alt="project feature" />
-                )}
-                {features === 4 && (
-                  <Image src={featureCalendar} fill alt="calendar feature" />
-                )}
-              </div>
-              <button
-                className="absolute right-0 w-1/2 h-full opacity-0 hover:opacity-100"
-                onClick={() => featureHandler("next")}
-              >
-                <div className="absolute right-7 z-10 top-2/2 h-full">
-                  <ChevronRight className="feature-carousel-btn" />
+              {features === 2 && (
+                <>
+                  <span className="text-[1.6rem]">
+                    지식을 한 곳에 모으고더 이상 찾아 헤매지 마세요
+                  </span>
+                  <Link href="#" className="flex">
+                    <span className="text-orange-600 text-[1.6rem]">
+                      자세히 알아보기 &rarr;
+                    </span>
+                  </Link>
+                </>
+              )}
+
+              {features === 3 && (
+                <>
+                  <span className="text-[1.6rem]">
+                    복잡한 프로젝트를 깔끔하게 관리하세요.
+                  </span>
+                  <Link href="#" className="flex">
+                    <span className="text-blue-600 text-[1.6rem]">
+                      자세히 알아보기 &rarr;
+                    </span>
+                  </Link>
+                </>
+              )}
+
+              {features === 4 && (
+                <>
+                  <span className="text-[1.6rem]">
+                    시간과 프로젝트를 함께 관리하세요.
+                  </span>
+                  <Link href="#" className="flex">
+                    <span className="text-red-600 text-[1.6rem]">
+                      자세히 알아보기 &rarr;
+                    </span>
+                  </Link>
+                </>
+              )}
+            </div>
+            <div className="py-[2rem]">
+              {/* <div className="relative min-w-[80rem] min-h-[50rem] mx-auto"> */}
+              <div className="min-[1px]:w-[40rem] md:w-[80rem] relative mx-auto px-[4rem]">
+                <button
+                  className="absolute z-10 left-0 w-1/2 h-full opacity-0 hover:opacity-100"
+                  onClick={() => featureHandler("prev")}
+                >
+                  <div className="absolute left-7 z-20">
+                    <ChevronLeft className="feature-carousel-btn" />
+                  </div>
+                </button>
+                {/* <div className="min-w-[20rem]:w-[40rem] min-w-[80rem]:w-[80rem]"> */}
+                <div className="relative">
+                  {features === 0 && (
+                    <Image
+                      src={featureAi}
+                      alt="ai feature"
+                      // className="max-w-full object-contain h-auto"
+                      layout="responsive"
+                      // fill
+                      // className="object-contain"
+                    />
+                  )}
+
+                  {features === 1 && (
+                    <Image
+                      src={featureDoc}
+                      alt="document feature"
+                      // className="max-w-full object-contain h-auto"
+                      layout="responsive"
+                      // fill
+                      // className="object-contain"
+                    />
+                  )}
+                  {features === 2 && (
+                    <Image
+                      src={featureWiki}
+                      alt="wiki feature"
+                      // className="max-w-full object-contain h-auto"
+                      layout="responsive"
+                      // fill
+                      // className="object-contain"
+                    />
+                  )}
+                  {features === 3 && (
+                    <Image
+                      src={featureProject}
+                      alt="project feature"
+                      // className="max-w-full object-contain h-auto"
+                      layout="responsive"
+                      // fill
+                      // className="object-contain"
+                    />
+                  )}
+                  {features === 4 && (
+                    <Image
+                      src={featureCalendar}
+                      alt="calendar feature"
+                      // className="max-w-full object-contain h-auto"
+                      layout="responsive"
+                      // fill
+                      // className="object-contain"
+                    />
+                  )}
                 </div>
-              </button>
+                <button
+                  className="absolute top-0 right-0 w-1/2 h-full opacity-0 hover:opacity-100"
+                  onClick={() => featureHandler("next")}
+                >
+                  <div className="absolute right-7 z-20 top-2/2 h-full">
+                    <ChevronRight className="feature-carousel-btn" />
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section className="py-20">
-        <div className="flex flex-col justify-center align-middle text-center">
-          <h2 className="">수백만 명이 매일 사용하는 Notion</h2>
-          <h3 className="">
-            차세대 스타트업부터 기존 기업에 이르기까지 세계 최고의 팀들을
-            지원합니다
-          </h3>
-          <div className="flex justify-center">
-            <Link href="#" className="text-blue-600 flex">
-              <span>고객 스토리 읽어보기</span>
-              <ArrowRight />
-            </Link>
-          </div>
-          <div className="flex gap-10 flex-row justify-center align-middle flex-wrap max-w-[820px] py-20 my-0 mx-auto">
-            <div className="w-[128px] h-[20px]">
-              <Image
-                src={testimonialLg}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[121px] h-[20px] ">
-              <Image
-                src={testimonialSendbird}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[136px] h-[20px]">
-              <Image
-                src={testimonialHyosung}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[70px] h-[30px]">
-              <Image
-                src={testimonialGs}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[62px] h-[40px]">
-              <Image
-                src={testimonialDg}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[92px] h-[27px]">
-              <Image
-                src={testimonialSocar}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[109px] h-[23px]">
-              <Image
-                src={testimonialKakao}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-            <div className="w-[59px] h-[41px]">
-              <Image
-                src={testimonialFF}
-                alt="lg ai research"
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col justify-center align-middle text-center">
-          <div className="flex justify-center align-middle">
-            <h2 className="text-4xl font-bold w-4/12">
-              여러 툴을 통합하고 비용을 절감하세요
+        <div className="w-full sm:max-w-[99rem] mx-auto px-[3.2rem]">
+          <div className="flex flex-col justify-center align-middle text-center">
+            <h2 className="text-[3.6rem] md:text-[4.6rem] font-bold text-[rgb(18, 18, 18)] -tracking-[1.2px]">
+              수백만 명이 매일 사용하는 Notion
             </h2>
-            <div className="relative w-48 h-48">
-              <Image
-                src={testimonialPencil}
-                alt="illustration"
-                width={200}
-                height={100}
-                className="absolute"
-              />
+            <h3 className="text-[1.6rem]">
+              차세대 스타트업부터 기존 기업에 이르기까지 세계 최고의 팀들을
+              지원합니다
+            </h3>
+            <div className="flex justify-center">
+              <Link href="#" className="text-blue-600 flex">
+                <span className="text-[1.6rem]">고객 스토리 읽어보기</span>
+                <ArrowRight />
+              </Link>
+            </div>
+            <div className="px-[1.2rem] align-middle w-[42rem] gap-4 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto">
+              {/* <div className="w-[128px] h-[20px]">
+                <Image
+                  src={testimonialLg}
+                  alt="lg ai research"
+                  className="object-contain"
+                /> */}
+              <div className="relative sm:w-[12.8rem] sm:h-[2rem] w-[12.8rem] h-[2rem]">
+                <Image
+                  src={testimonialLg}
+                  alt="lg ai research"
+                  // className="max-w-full object-contain h-auto"
+                  layout="responsive"
+                  // fill
+                  // className="object-contain"
+                />
+                {/* </div> */}
+              </div>
+              <div className="w-[12.1rem] h-[2rem] ">
+                <Image
+                  src={testimonialSendbird}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[13.6rem] h-[2rem]">
+                <Image
+                  src={testimonialHyosung}
+                  alt="lg ai research"
+                  className="object-contain my-auto"
+                />
+              </div>
+              <div className="w-[7rem] h-[3rem]">
+                <Image
+                  src={testimonialGs}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[6.2rem] h-[4rem]">
+                <Image
+                  src={testimonialDg}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[9.2rem] h-[2.7rem]">
+                <Image
+                  src={testimonialSocar}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[10.9rem] h-[2.3rem]">
+                <Image
+                  src={testimonialKakao}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
+              <div className="w-[5.9rem] h-[4.1rem]">
+                <Image
+                  src={testimonialFF}
+                  alt="lg ai research"
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
-          <div className="relative w-[50rem] h-[5rem] mx-auto right-[16%]">
-            <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[30%]">
-              <Image
-                src={testimonialPencilmark}
-                className="absolute mix-blend-multiply"
-                alt="strikethrough pencilmark"
-              />
+          <div className="flex flex-col justify-center align-middle text-center">
+            <div className="flex justify-center align-middle">
+              <h2 className="text-[3.6rem] md:text-[4.2rem] font-bold w-4/12">
+                여러 툴을 통합하고 비용을 절감하세요
+              </h2>
+              <div className="relative w-48 h-48 ">
+                <Image
+                  src={testimonialPencil}
+                  alt="illustration"
+                  width={200}
+                  height={100}
+                  className="absolute"
+                />
+              </div>
             </div>
-            <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[50%] ">
-              <Image
-                src={testimonialBeforeTools}
-                alt="other alternative tools used before notion"
-                className="absolute mix-blend-multiply"
-              />
+            <div className="relative w-[50rem] h-[5rem] mx-auto right-[8%] sm:right-[10%]">
+              <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[30%]">
+                <Image
+                  src={testimonialPencilmark}
+                  className="absolute mix-blend-multiply"
+                  alt="strikethrough pencilmark"
+                />
+              </div>
+              <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[50%] ">
+                <Image
+                  src={testimonialBeforeTools}
+                  alt="other alternative tools used before notion"
+                  className="absolute mix-blend-multiply"
+                />
+              </div>
             </div>
+            <figure className="flex flex-col justify-center align-middle px-[3.2rem]">
+              <blockquote className="text-[1.8rem] md:text-[2.4rem]">
+                "Notion 하나로 10개 이상의 기존 툴을 대체할 수 있었어요."
+              </blockquote>
+              <figcaption className="flex justify-center align-middle gap-4 ">
+                <div className="w-[127px] h-[35px] my-auto">
+                  <Image src={testimonialMetalab} alt="metalab logo" />
+                </div>
+                <div className="text-left">
+                  <p className="text-[1.4rem] md:text-[2rem]">Justin Watt</p>
+                  <p className="text-[1.4rem] md:text-[2rem]">
+                    MetaLab 운영 및 마케팅팀 이사
+                  </p>
+                </div>
+              </figcaption>
+            </figure>
           </div>
-          <figure className="flex flex-col justify-center align-middle">
-            <blockquote className="text-[24px]">
-              "Notion 하나로 10개 이상의 기존 툴을 대체할 수 있었어요."
-            </blockquote>
-            <figcaption className="flex justify-center align-middle gap-4 ">
-              <div className="w-[127px] h-[35px] my-auto">
-                <Image src={testimonialMetalab} alt="metalab logo" />
-              </div>
-              <div className="text-left">
-                <p>Justin Watt</p>
-                <p>MetaLab 운영 및 마케팅팀 이사</p>
-              </div>
-            </figcaption>
-          </figure>
         </div>
       </section>
       <section className="py-20">
-        <div className="max-w-[99rem] px-[3.2rem] relative">
-          <Image
-            className="absolute top-[-5%]"
-            src={blockTop}
-            alt="two people peaking"
-          />
-          <h2 className="text-[45px] font-bold">강력한 빌딩 블록</h2>
+        <div className="w-full lg:max-w-[99rem] px-[3.2rem] relative">
+          <h2 className="mb-[20rem] text-[4.5rem] font-bold">
+            강력한 빌딩 블록
+          </h2>
           <div className="flex flex-col gap-5">
-            <div className="hero-block px-5 py-5 max-w-[98rem]">
+            <div className="hero-block px-[3rem] py-5 w-[80%] lg:w-[98rem] relative mx-auto">
+              <Image
+                className="absolute top-[-20%] w-[50%] h-[25%] md:h-[50%] lg:w-[22rem] lg:h-[15rem] lg:top-[-16%]"
+                src={blockTop}
+                alt="two people peaking"
+              />
               <header className="text-left py-5">
                 <Shuffle fill="#0081f2" />
-                <h3 className="text-[18px] text-bold pb-5">
+                <h3 className="text-[1.8rem] text-bold pb-5">
                   원하는 방식으로 보기 표시, 필터링, 정렬
                 </h3>
-                <p className="text-[16px] max-w-[30rem]">
+                <p className="text-[1.6rem] sm:w-[30rem]">
                   나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요.
                   어떤 프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수
                   있어요.
                 </p>
               </header>
-              <div className="max-w-[92.2rem] max-h-[57.7rem] mx-auto pb-5">
+              <div className="w-[80%] lg:w-[92.2rem] lg:h-[57.7rem] mx-auto pb-5">
                 {block === 0 && (
                   <Image
                     src={blockBoard}
                     alt="board feature"
                     className="object-contain"
+                    layout="responsive"
                   />
                 )}
                 {block === 1 && (
@@ -544,12 +619,12 @@ export const Heroes = () => {
                 </nav>
               </div>
             </div>
-            <div className="flex justify-between gap-[2.4rem] pb-[2.5rem]">
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem]">
+            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] pb-[2.5rem]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] w-[80%] lg:w-[50%] mx-auto">
                 <header className="text-left">
                   <Eye fill="#0081f2" />
-                  <p className="text-[1.8rem] text-bold">관심 정보 지정</p>
-                  <p className="max-w-[30rem]">
+                  <p className="text-[1.8rem] font-bold">관심 정보 지정</p>
+                  <p className="max-w-[30rem] text-[1.6rem]">
                     필요에 맞게 라벨, 태그, 담당자 등을 지정해 모든 사람들이
                     관련 정보를 볼 수 있게 하세요.
                   </p>
@@ -562,13 +637,13 @@ export const Heroes = () => {
                   />
                 </div>
               </div>
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] w-[80%] lg:w-[50%] mx-auto">
                 <header className="text-left">
                   <Palette fill="#0081f2" />
-                  <p className="text-[1.8rem] text-bold">
+                  <p className="text-[1.8rem] font-bold">
                     원하는 대로 페이지를 구성하고 아이디어 공유
                   </p>
-                  <p>
+                  <p className="text-[1.6rem]">
                     Notion에서는 이미지, 토글, 할 일, 임베드된 데이터베이스까지
                     모든 것이 드래그 & 드롭입니다.
                   </p>
@@ -584,110 +659,143 @@ export const Heroes = () => {
             </div>
           </div>
 
-          <figure>
-            <blockquote className="text-[2.4rem] mx-auto max-w-[60%]">
+          <figure className="w-[80%] mx-auto">
+            <blockquote className="text-[2.4rem] mx-auto w-[60%] py-[2rem]">
               "Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는 만큼
               간단하게 또는 정교하게 만들어 사용할 수 있어요."
             </blockquote>
-            <figcaption className="flex justify-center align-middle gap-3">
-              <div className="max-w-[3.3rem] max-h-[3.6rem]">
-                <Image src={tinderIcon} alt="match group icon" />
+            <figcaption className="flex flex-col md:flex-row justify-center align-middle gap-3 mx-auto">
+              <div className="w-[3.3rem] h-[3.6rem] mx-auto sm:mx-0 relative">
+                <Image src={tinderIcon} alt="match group icon" fill />
               </div>
-              <div className="flex flex-col justify-center align-middle text-left">
-                <p className="font-bold">Rahim Makani</p>
-                <p>Match Group 프로덕트 디렉터</p>
+              <div className="flex flex-col justify-center align-middle text-center md:text-left ">
+                <p className="font-bold text-[1.35rem]">Rahim Makani</p>
+                <p className="text-[1.35rem]">Match Group 프로덕트 디렉터</p>
               </div>
             </figcaption>
           </figure>
         </div>
       </section>
       <section className="py-20">
-        <div className="max-w-[99rem] px-[3.2rem]">
-          <h2 className="text-[4.5rem] font-bold">모든 팀을 위한 협업툴</h2>
-          <div className="flex justify-center gap-20">
+        <div className="w-[80%] lg:w-[99rem] px-[0.8rem] md:px-[3.2rem] mx-auto">
+          <h2 className="text-[3rem] pb-[2rem] md:text-[4.5rem] font-bold">
+            모든 팀을 위한 협업툴
+          </h2>
+          <div className="flex justify-center pb-[2.5rem] gap-2 md:gap-5 lg:gap-10 w-[60%] lg:w-[80%] mx-auto">
             <div
               className={clsx(
-                "hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem] max-w-[15.7rem] max-h-[12.5rem]",
+                // "hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem] md:w-[15.7rem] md:h-[12.5rem]",
+                "hero-block my-auto",
                 {
                   "selected-white": team === 0,
                 }
               )}
             >
-              <button onClick={() => setTeam(0)}>
-                <div>
+              <button
+                onClick={() => setTeam(0)}
+                className="py-[0.2rem] px-[0.4rem]  md:py-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image src={teamEng} alt="feature for Engineering teams" />
                 </div>
-                <p>엔지니어링</p>
+                <p className="text-[1.3rem] lg:text-[1.6rem] font-medium whitespace-nowrap">
+                  엔지니어링
+                </p>
               </button>
             </div>
             <div
-              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+              className={clsx("hero-block my-auto", {
                 "selected-white": team === 1,
               })}
             >
-              <button onClick={() => setTeam(1)}>
-                <div>
+              <button
+                onClick={() => setTeam(1)}
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image src={teamDesign} alt="feature for Design teams" />
                 </div>
-                <p>디자인</p>
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
+                  디자인
+                </p>
               </button>
             </div>
             <div
-              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+              className={clsx("hero-block my-auto", {
                 "selected-white": team === 2,
               })}
             >
-              <button onClick={() => setTeam(2)}>
-                <div>
+              <button
+                onClick={() => setTeam(2)}
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image src={teamProduct} alt="feature for Product teams" />
                 </div>
-                <p>프로덕트</p>
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
+                  프로덕트
+                </p>
               </button>
             </div>
             <div
-              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+              className={clsx("hero-block my-auto ", {
                 "selected-white": team === 3,
               })}
             >
-              <button onClick={() => setTeam(3)}>
-                <div>
+              <button
+                onClick={() => setTeam(3)}
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image
                     src={teamMarketing}
                     alt="feature for Management teams"
                   />
                 </div>
-                <p>마케팅</p>
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
+                  마케팅
+                </p>
               </button>
             </div>
             <div
-              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+              className={clsx("hero-block my-auto", {
                 "selected-white": team === 4,
               })}
             >
-              <button onClick={() => setTeam(4)}>
-                <div>
+              <button
+                onClick={() => setTeam(4)}
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image
                     src={teamManagement}
                     alt="feature for Management teams"
                   />
                 </div>
-                <p>운영</p>
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
+                  운영
+                </p>
               </button>
             </div>
             <div
-              className={clsx("hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem]", {
+              className={clsx("hero-block my-auto ", {
                 "selected-white": team === 5,
               })}
             >
-              <button onClick={() => setTeam(5)}>
-                <div>
+              <button
+                onClick={() => setTeam(5)}
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+              >
+                <div className="hidden lg:block">
                   <Image src={teamHr} alt="feature for Hr teams" />
                 </div>
-                <p>HR</p>
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
+                  HR
+                </p>
               </button>
             </div>
           </div>
-          <div className="flex justify-center w-[100%]">
+          <div className="flex justify-center w-[50%] lg:w-[80%] mx-auto md:px-[0.8rem]">
             {team === 0 && (
               <Image
                 src={teamEngScreenshot}
@@ -770,12 +878,14 @@ export const Heroes = () => {
         </div>
       </section> */}
       <section className="py-20">
-        <div className="max-w-[99rem] px-[3.2rem]">
-          <h2 className="text-[6.1rem] mb-4 font-bold">무료로 시작하기</h2>
+        <div className="w-[80%] md:w-[99rem] px-[3.2rem] mx-auto">
+          <h2 className="text-[4.5rem] md:text-[6.1rem] mb-4 font-bold mx-auto">
+            무료로 시작하기
+          </h2>
           <p className="mb-4 text-[1.6rem]">
             요금을 지불하고 팀원을 추가하기 전에 무료로 충분히 사용해 보세요.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 pb-4">
             <button className="bg-black text-white py-2 px-4 rounded-md text-[1.6rem]">
               무료로 Notion 사용하기
             </button>
@@ -785,11 +895,11 @@ export const Heroes = () => {
               </p>
             </button>
           </div>
-          <div>
+          <div className="w-[80%] mx-auto">
             <Image
               src={ctaParade}
               alt="notion parade"
-              className="max-w-[67rem] max-h-[33rem] mx-auto"
+              className="object-contain"
             />
           </div>
         </div>

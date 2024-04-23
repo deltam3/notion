@@ -26,8 +26,11 @@ export const Heading = () => {
           )}
           {isAuthenticated && !isLoading && (
             <div className="flex gap-2 justify-center">
-              <Button className="hero-btn" asChild>
-                <Link href="/documents">
+              <Button
+                className="hero-btn text-[1.6rem] px-[2rem] py-[1rem]"
+                asChild
+              >
+                <Link href="/documents" className="text-[1.6rem]">
                   노션 사용하기
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
@@ -41,16 +44,20 @@ export const Heading = () => {
             </div>
           )}
           {!isAuthenticated && !isLoading && (
-            <div className="flex gap-2 justify-center">
+            <div className="flex gap-2 justify-center text-[1.6rem]">
               <SignInButton mode="modal">
-                <Button className="hero-btn">
-                  노션 무료로 다운받기
+                <Button className="hero-btn px-[2rem] py-[2rem]">
+                  <span className="text-[1.6rem]">노션 무료로 다운받기</span>
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </SignInButton>
-              <Button className="bg-white text-black" asChild>
+              <Button
+                className="bg-white text-black px-[2rem] py-[2rem]"
+                asChild
+              >
                 <Link href="#">
-                  영업팀 문의하기
+                  <span className="text-[1.6rem]">영업팀 문의하기</span>
+
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Link>
               </Button>

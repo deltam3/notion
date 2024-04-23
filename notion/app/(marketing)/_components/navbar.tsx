@@ -148,7 +148,7 @@ export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const scrolled = useScrollTop();
 
-  const [isMobileOn, setIsMobileOn] = useState<boolean>(true);
+  const [isMobileOn, setIsMobileOn] = useState<boolean>(false);
 
   const [isWhichMobileMenuOpened, setIsWhichMobileMenuOpened] = useState([
     { id: 0, name: "product", isOpened: false },
