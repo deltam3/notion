@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
 import Link from "next/link";
@@ -9,7 +10,6 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
 
-import { ArrowDown } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -32,9 +32,12 @@ import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   Shuffle,
   Eye,
   Palette,
+  Menu,
+  X,
 } from "lucide-react";
 
 import { StringValidation } from "zod";
@@ -145,171 +148,188 @@ export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   const scrolled = useScrollTop();
 
+  const [isMobileOn, setIsMobileOn] = useState<boolean>(true);
+
+  const [isWhichMobileMenuOpened, setIsWhichMobileMenuOpened] = useState([
+    { id: 0, name: "product", isOpened: false },
+    { id: 1, name: "solution", isOpened: false },
+    { id: 2, name: "resources", isOpened: false },
+    { id: 3, name: "download", isOpened: false },
+  ]);
+
+  const mobileMenuHandler = (id: number) => {
+    const menus: any = isWhichMobileMenuOpened.map((menu) => {
+      console.log("log");
+      if (menu.id === id) {
+        return { ...menu, isOpened: !menu.isOpened };
+      }
+      return menu;
+    });
+    setIsWhichMobileMenuOpened(menus);
+  };
+
   return (
     <header
       className={cn(
-        "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-6",
+        "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-6 max-[1024px]:flex-col",
         scrolled && "border-b shadow-sm"
       )}
     >
-      <nav className="hidden md:flex gap-20">
+      {/* <nav className="hidden md:flex"> */}
+      <nav className="hidden lg:flex">
         <Logo />
 
         <NavigationMenu>
-          <NavigationMenu>
-            <NavigationMenuItem>
-              {/* <NavigationMenuItem> */}
-              <NavigationMenuTrigger>
-                <span className="text-[1.5rem]">프로덕트</span>
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="flex w-[48rem]">
-                  <ul className="grid border-r-[1px] w-[50%] gap-3 grid-cols-1 py-[1rem] px-[2rem]">
-                    <li>
-                      <NavigationMenuLink>
-                        <Link
-                          href="#"
-                          // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          className="flex gap-2"
-                        >
-                          <div>
-                            <Sparkle fill="purple" />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem]">AI</p>
-                            <p className="text-[1.3rem]">
-                              최적의 AI 어시스턴트
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link
-                          href="#"
-                          // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          className="flex gap-2"
-                        >
-                          <div>
-                            <FileText fill="orange" />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem]">문서</p>
-                            <p className="text-[1.3rem]">
-                              심플하지만 강력한 툴
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link
-                          href="#"
-                          // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          className="flex gap-2"
-                        >
-                          <div>
-                            <BookOpenText fill="red" />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem]">워키</p>
-                            <p className="text-[1.3rem]">
-                              모든 지식을 모으는 지식 허브
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link
-                          href="#"
-                          // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          className="flex gap-2"
-                        >
-                          <div>
-                            <Target fill="blue" />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem]">프로젝트</p>
-                            <p className="text-[1.5rem]">
-                              모든 규모의 팀을 위한 툴
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link
-                          href="#"
-                          // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          className="flex gap-2"
-                        >
-                          <div>
-                            <Calendar fill="red" />
-                          </div>
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem]">캘린더</p>
-                            <p className="text-[1.3rem]">
-                              일과 시간을 함께 관리하기
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                  <ul className="w-[50%] py-[1rem] px-[2rem] flex flex-col gap-2">
-                    <li>
-                      <NavigationMenuLink>
-                        <Link href="#" className="flex gap-2">
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
-                              템플릿 갤러리
-                            </p>
-                            <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
-                              시작에 필요한 템플릿
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link href="#" className="flex gap-2">
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
-                              고객 스토리
-                            </p>
-                            <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
-                              다양한 팀의 Notion 활용 사례
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <li>
-                      <NavigationMenuLink>
-                        <Link href="#" className="flex gap-2">
-                          <div className="flex flex-col">
-                            <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
-                              연결
-                            </p>
-                            <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
-                              자주 사용하는 툴 연결
-                            </p>
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                  </ul>
-                </div>
-              </NavigationMenuContent>
-              {/* </NavigationMenuItem> */}
-            </NavigationMenuItem>
-          </NavigationMenu>
+          {/* <NavigationMenu> */}
+          <NavigationMenuItem>
+            {/* <NavigationMenuItem> */}
+            <NavigationMenuTrigger>
+              <span className="text-[1.5rem]">프로덕트</span>
+            </NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <div className="flex w-[48rem]">
+                <ul className="grid border-r-[1px] w-[50%] gap-3 grid-cols-1 py-[1rem] px-[2rem]">
+                  <li>
+                    <NavigationMenuLink>
+                      <Link
+                        href="#"
+                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex gap-2"
+                      >
+                        <div>
+                          <Sparkle fill="purple" />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem]">AI</p>
+                          <p className="text-[1.3rem]">최적의 AI 어시스턴트</p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link
+                        href="#"
+                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex gap-2"
+                      >
+                        <div>
+                          <FileText fill="orange" />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem]">문서</p>
+                          <p className="text-[1.3rem]">심플하지만 강력한 툴</p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link
+                        href="#"
+                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex gap-2"
+                      >
+                        <div>
+                          <BookOpenText fill="red" />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem]">워키</p>
+                          <p className="text-[1.3rem]">
+                            모든 지식을 모으는 지식 허브
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link
+                        href="#"
+                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex gap-2"
+                      >
+                        <div>
+                          <Target fill="blue" />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem]">프로젝트</p>
+                          <p className="text-[1.5rem]">
+                            모든 규모의 팀을 위한 툴
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link
+                        href="#"
+                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        className="flex gap-2"
+                      >
+                        <div>
+                          <Calendar fill="red" />
+                        </div>
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem]">캘린더</p>
+                          <p className="text-[1.3rem]">
+                            일과 시간을 함께 관리하기
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+                <ul className="w-[50%] py-[1rem] px-[2rem] flex flex-col gap-2">
+                  <li>
+                    <NavigationMenuLink>
+                      <Link href="#" className="flex gap-2">
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
+                            템플릿 갤러리
+                          </p>
+                          <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
+                            시작에 필요한 템플릿
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link href="#" className="flex gap-2">
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
+                            고객 스토리
+                          </p>
+                          <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
+                            다양한 팀의 Notion 활용 사례
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                  <li>
+                    <NavigationMenuLink>
+                      <Link href="#" className="flex gap-2">
+                        <div className="flex flex-col">
+                          <p className="text-[1.5rem] font-medium text-[rgb(5, 5, 5)]">
+                            연결
+                          </p>
+                          <p className="text-[1.3rem] text-[rgba(0, 0, 0, 0.6)]">
+                            자주 사용하는 툴 연결
+                          </p>
+                        </div>
+                      </Link>
+                    </NavigationMenuLink>
+                  </li>
+                </ul>
+              </div>
+            </NavigationMenuContent>
+            {/* </NavigationMenuItem> */}
+          </NavigationMenuItem>
+          {/* </NavigationMenu> */}
         </NavigationMenu>
         <NavigationMenu>
           <NavigationMenuItem>
@@ -603,7 +623,7 @@ export const Navbar = () => {
         </NavigationMenu>
       </nav>
 
-      <div className="hidden md:flex md:ml-auto md:justify-end justify-between w-full items-center gap-x-2">
+      <div className="hidden lg:flex md:ml-auto md:justify-end justify-between w-full items-center gap-x-2">
         {isLoading && <Spinner />}
         {!isAuthenticated && !isLoading && (
           <>
@@ -636,6 +656,373 @@ export const Navbar = () => {
         )}
         {/* <ModeToggle /> */}
       </div>
+      <div className="hidden max-[1024px]:flex justify-between align-middle w-full mb-[1rem]">
+        <Logo />
+        <div>
+          <button onClick={() => setIsMobileOn(!isMobileOn)} className="">
+            {isMobileOn ? <X /> : <Menu />}
+          </button>
+        </div>
+      </div>
+      {isMobileOn && (
+        <nav className="w-full h-screen overflow-y-auto pb-[14rem] overflow-hidden">
+          <div>
+            <ul>
+              <li
+                className="w-full border-t-[1px] my-[1rem]"
+                onClick={() => mobileMenuHandler(0)}
+              >
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">프로덕트</p>
+                  <div className="my-auto">
+                    {isWhichMobileMenuOpened[0].isOpened ? (
+                      <ChevronDown />
+                    ) : (
+                      <ChevronRight />
+                    )}
+                  </div>
+                </div>
+                {isWhichMobileMenuOpened[0].isOpened && (
+                  <nav>
+                    <ul className="flex flex-col gap-[0.8rem] pb-[1rem] text-[1.6rem]">
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div>
+                            <Sparkle fill="purple"></Sparkle>
+                          </div>
+                          <div className="my-auto">
+                            <p>AI</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div>
+                            <FileText fill="orange"></FileText>
+                          </div>
+                          <div className="my-auto">
+                            <p>문서</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div>
+                            <BookOpenText fill="red"></BookOpenText>
+                          </div>
+                          <div className="my-auto">
+                            <p>위키</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div>
+                            <Target fill="blue"></Target>
+                          </div>
+                          <div className="my-auto">
+                            <p>프로젝트</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div>
+                            <Calendar fill="red"></Calendar>
+                          </div>
+                          <div className="my-auto">
+                            <p>캘린더</p>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                    <ul className="flex flex-col gap-[0.4rem] text-[1.6rem]">
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div className="px-[0.4rem]">
+                            <p>템플릿 갤러리</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div className="px-[0.4rem]">
+                            <p>고객 스토리</p>
+                          </div>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="#" className="flex gap-2 align-middle">
+                          <div className="px-[0.4rem]">
+                            <p>연결</p>
+                          </div>
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+                )}
+              </li>
+              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
+                <p>솔루션</p>
+
+              </li> */}
+              <li
+                className="w-full border-t-[1px] my-[1rem]"
+                onClick={() => mobileMenuHandler(1)}
+              >
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">솔루션</p>
+                  <div className="my-auto">
+                    {isWhichMobileMenuOpened[1].isOpened ? (
+                      <ChevronDown />
+                    ) : (
+                      <ChevronRight />
+                    )}
+                  </div>
+                </div>
+                {isWhichMobileMenuOpened[1].isOpened && (
+                  <nav className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-3">
+                      <span className="text-[1.1rem] text-[rgba(0,0,0,.6)]">
+                        팀 규모별 솔류션
+                      </span>
+                      <ul className="flex flex-col gap-[0.4rem] text-[1.6rem]">
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>회사</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>팀</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>개인</p>
+                            </div>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      <span className="text-[1.1rem] text-[rgba(0,0,0,.6)]">
+                        NOTION 이용대상
+                      </span>
+                      <ul className="flex flex-col gap-[0.4rem] text-[1.6rem]">
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>스타트업</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>원격 근무</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>교육</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>비영리단체</p>
+                            </div>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                )}
+              </li>
+              <li
+                className="w-full border-t-[1px] my-[1rem]"
+                onClick={() => mobileMenuHandler(2)}
+              >
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">자료</p>
+                  <div className="my-auto">
+                    {isWhichMobileMenuOpened[2].isOpened ? (
+                      <ChevronDown />
+                    ) : (
+                      <ChevronRight />
+                    )}
+                  </div>
+                </div>
+                {isWhichMobileMenuOpened[2].isOpened && (
+                  <nav className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-3">
+                      <ul className="flex flex-col gap-[0.4rem] text-[1.6rem]">
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>블로그</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>Notion 아카데미</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>가이드와 튜토리얼</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>웨비나</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>도움말 센터</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>API 문서</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>커뮤니티</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>컨설턴트 고용</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>파트너 되기</p>
+                            </div>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                )}
+              </li>
+              <li
+                className="w-full border-t-[1px] my-[1rem]"
+                onClick={() => mobileMenuHandler(3)}
+              >
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">다운로드</p>
+                  <div className="my-auto">
+                    {isWhichMobileMenuOpened[3].isOpened ? (
+                      <ChevronDown />
+                    ) : (
+                      <ChevronRight />
+                    )}
+                  </div>
+                </div>
+                {isWhichMobileMenuOpened[3].isOpened && (
+                  <nav className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-3">
+                      <ul className="flex flex-col gap-[0.4rem] text-[1.6rem]">
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>Notion (노션)</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>Notion 캘린더</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="#" className="flex gap-2 align-middle">
+                            <div className="px-[0.4rem]">
+                              <p>Web Clipper</p>
+                            </div>
+                          </Link>
+                        </li>
+                        <li>
+                          <p>
+                            <span className="text-[1.1rem] text-[rgba(0,0,0,.6)] px-[0.4rem]">
+                              Notion (노션)은{" "}
+                              <span className="underline">
+                                사용 중인 브라우저
+                              </span>
+                              에서 언제든지 사용할 수 있습니다.
+                            </span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                )}
+              </li>
+              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
+                <p>요금제</p>
+              </li> */}
+              <li className="w-full border-t-[1px] my-[1rem]">
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">
+                    <Link href="#">요금제</Link>
+                  </p>
+                </div>
+              </li>
+              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
+                <p>영업팀 문의하기</p>
+              </li> */}
+              <li className="w-full border-t-[1px] border-b-[1px] my-[1rem]">
+                <div className="flex align-middle justify-between h-[6rem]">
+                  <p className="text-[1.6rem] font-bold my-auto">
+                    <Link href="#">영업팀 문의하기</Link>
+                  </p>
+                </div>
+              </li>
+              <li className="w-full mt-[2rem] ">
+                <div className="flex flex-col gap-4">
+                  <button className="text-[white] bg-black text-[1.6rem] py-[1rem]">
+                    무료로 Notion 사용하기
+                  </button>
+                  <button className="text-black bg-white text-[1.6rem] py-[1rem] border-[1px]">
+                    로그인
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      )}
     </header>
   );
 };

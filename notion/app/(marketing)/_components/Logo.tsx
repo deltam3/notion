@@ -10,14 +10,14 @@ const font = Poppins({
 
 export const Logo = () => {
   return (
-    <div className="hidden md:flex items-center gap-x-2">
+    <div className="flex items-center gap-x-2 mr-[2rem]">
       <div className="max-w-[3rem] max-h-[3.2rem]">
         <Image
           src="/logo.svg"
           alt="Logo"
           width={30}
           height={32}
-          className="dark:hidden max-w-[3rem] max-h-[3.2rem] "
+          className="dark:hidden max-w-[3rem] max-h-[3.2rem]"
         />
       </div>
 
