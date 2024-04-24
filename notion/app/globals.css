@@ -36,7 +36,6 @@ body,
 .hero-block {
   background-color: var(--color-block);
   border-radius: 12px;
-  /* background-color: red; */
 }
 
 .selected-gray {
