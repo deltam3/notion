@@ -72,7 +72,7 @@ import communityFaces from "../../../public/latest/faces.png";
 import ctaParade from "../../../public/latest/notion-parade.png";
 
 export const Heroes = () => {
-  const [features, setFeatures] = useState<Number>(1);
+  const [features, setFeatures] = useState<Number>(0);
 
   const featureHandler = (action: string) => {
     if (action === "prev") {
@@ -620,8 +620,8 @@ export const Heroes = () => {
                 </nav>
               </div>
             </div>
-            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] pb-[2.5rem]">
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] w-[80%] lg:w-[50%] mx-auto">
+            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] pb-[2.5rem] w-[80%] lg:w-[98rem] mx-auto">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
                 <header className="text-left">
                   <Eye fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">관심 정보 지정</p>
@@ -638,7 +638,7 @@ export const Heroes = () => {
                   />
                 </div>
               </div>
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] w-[80%] lg:w-[50%] mx-auto">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
                 <header className="text-left">
                   <Palette fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">

@@ -637,10 +637,7 @@ export const Navbar = () => {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button
-                size="md"
-                className="py-[0.4rem] px-[1.1rem] text-[1.5rem]"
-              >
+              <Button className="py-[0.4rem] px-[1.1rem] text-[1.5rem]">
                 <span className="">무료로 Notion 사용하기</span>
               </Button>
             </SignInButton>
