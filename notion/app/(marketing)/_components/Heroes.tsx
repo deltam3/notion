@@ -22,6 +22,8 @@ import {
 
 import { Button } from "@/components/ui/button";
 
+import heroPic from "../../../public/hero.jpg";
+
 import featureAi from "../../../public/latest/features-ai.webp";
 import featureDoc from "../../../public/latest/features-document.webp";
 import featureWiki from "../../../public/latest/features-wiki.png";
@@ -101,6 +103,11 @@ export const Heroes = () => {
 
   return (
     <main>
+      <section className="py-20">
+        <div className="relative  w-[99rem] mx-auto">
+          <Image src={heroPic} alt="hero" />
+        </div>
+      </section>
       <section className="section-testimonial">
         <div className="max-w-[99rem] px-[3.2rem]">
           <figure className="flex flex-col justify-center align-middle">
