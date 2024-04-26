@@ -11,17 +11,19 @@ export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   return (
     <section className="py-20">
-      <div className="max-w-[99rem] px-[3.2rem]">
-        <div className="max-w-3xl space-y-4">
-          <h1 className="text-[6.1rem] font-bold">
-            함께쓰고,계획하고,즐기세요
+      <div className="max-w-[45rem] sm:max-w-[78rem] lg:px-[2.4rem]">
+        <div className="space-y-3">
+          <h1 className="text-[4.5rem] lg:text-[6.1rem] font-bold">
+            <span className="max-[700px]:block">함께쓰고,</span>
+            <span>계획하고,</span>
+            <span>즐기세요</span>
           </h1>
-          <p className="text-[2.4rem]">
+          <p className="lg:max-w-[31.7rem] text-[2.4rem] mx-auto leading-[3rem]">
             Notion의 AI 기반 워크스페이스로 아이디어를 액션으로 옮기세요
           </p>
           {isLoading && (
             <div className="w-full flex items-center justify-center">
-              <Spinner size="lg" />
+              <Spinner size="icon" />
             </div>
           )}
           {isAuthenticated && !isLoading && (

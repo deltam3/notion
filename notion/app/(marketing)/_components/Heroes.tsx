@@ -104,15 +104,15 @@ export const Heroes = () => {
       <section className="section-testimonial">
         <div className="max-w-[99rem] px-[3.2rem]">
           <figure className="flex flex-col justify-center align-middle">
-            <blockquote className="text-[4.3rem]">
+            <blockquote className="text-[3.4rem] lg:text-[4.3rem]">
               &quot;AI의 모든 것을 담은 앱&quot;
             </blockquote>
             <figcaption>
               <a href="#" className="flex justify-center">
-                <div className="relative h-[50px] w-[100px] md:block">
+                <div className="relative w-[6.6rem] h-[1.7rem] lg:h-[5rem] lg:w-[100px]">
                   <Image
                     src="/latest/forbes.png"
-                    alt="forbes"
+                    alt="forbes logo"
                     fill
                     className="object-contain"
                   />
