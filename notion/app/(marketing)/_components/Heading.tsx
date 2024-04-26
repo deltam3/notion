@@ -7,18 +7,22 @@ import { SignInButton } from "@clerk/clerk-react";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
 
+// import heroVideo from "../../../public/notionhero.mp4";
+import heroSide from "../../../public/heroside.png";
+import Image from "next/image";
+
 export const Heading = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
   return (
     <section className="py-20">
       <div className="max-w-[45rem] sm:max-w-[78rem] lg:px-[2.4rem]">
         <div className="space-y-3">
-          <h1 className="text-[4.5rem] lg:text-[6.1rem] font-bold">
+          <h1 className="text-[4.5rem] lg:text-[6.1rem] font-bold leading-[4.9rem] lg:leading-[6.5rem]">
             <span className="max-[700px]:block">함께쓰고,</span>
             <span>계획하고,</span>
             <span>즐기세요</span>
           </h1>
-          <p className="lg:max-w-[31.7rem] text-[2.4rem] mx-auto leading-[3rem]">
+          <p className="lg:max-w-[31.7rem] text-[2.4rem] mx-auto leading-[3rem] pb-[1.6rem]">
             Notion의 AI 기반 워크스페이스로 아이디어를 액션으로 옮기세요
           </p>
           {isLoading && (
@@ -48,8 +52,8 @@ export const Heading = () => {
           {!isAuthenticated && !isLoading && (
             <div className="flex gap-2 justify-center text-[1.6rem]">
               <SignInButton mode="modal">
-                <Button className="hero-btn px-[2rem] py-[2rem]">
-                  <span className="text-[1.6rem]">노션 무료로 다운받기</span>
+                <Button className="hero-btn px-[2rem] py-[2rem] rounded-lg">
+                  <span className="text-[1.6rem]">무료로 Notion 사용하기</span>
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </SignInButton>

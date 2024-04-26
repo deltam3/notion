@@ -40,7 +40,7 @@ import testimonialFF from "../../../public/latest/FandF-Logo.png";
 import testimonialPencil from "../../../public/latest/giant-pencil-illustration.png";
 import testimonialPencilmark from "../../../public/latest/tools-strikethrough-V2.png";
 import testimonialBeforeTools from "../../../public/latest/tools-before-notion-V2.png";
-
+import mobileTestimonialPencil from "../../../public/latest/pencil-peek-illustration-V2.webp";
 import testimonialMetalab from "../../../public/latest/metalab.png";
 
 import blockTop from "../../../public/latest/topPeek.png";
@@ -135,7 +135,7 @@ export const Heroes = () => {
                 ) : (
                   <Sparkle className="my-0 mx-auto" />
                 )}
-                <p className="mx-auto text-[2.4rem]">AI</p>
+                <p className="mx-auto text-[1.6rem] lg:text-[2.4rem]">AI</p>
               </button>
             </div>
             <div className="flex flex-col gap-4 justify-center align-middle">
@@ -148,7 +148,7 @@ export const Heroes = () => {
                 ) : (
                   <FileText className="my-0 mx-auto" />
                 )}
-                <p className="mx-auto text-[2.4rem]">문서</p>
+                <p className="mx-auto text-[1.6rem] lg:text-[2.4rem]">문서</p>
               </button>
             </div>
             <div>
@@ -162,7 +162,7 @@ export const Heroes = () => {
                   ) : (
                     <BookOpenText className="my-0 mx-auto" />
                   )}
-                  <p className="mx-auto text-[2.4rem]">위키</p>
+                  <p className="mx-auto text-[1.6rem] lg:text-[2.4rem]">위키</p>
                 </button>
               </button>
             </div>
@@ -176,7 +176,9 @@ export const Heroes = () => {
                 ) : (
                   <FileText className="my-0 mx-auto" />
                 )}
-                <p className="mx-auto text-[2.4rem]">프로젝트</p>
+                <p className="mx-auto text-[1.6rem] lg:text-[2.4rem]">
+                  프로젝트
+                </p>
               </button>
             </div>
             <div
@@ -189,7 +191,7 @@ export const Heroes = () => {
                 ) : (
                   <Calendar className="my-0 mx-auto" />
                 )}
-                <p className="mx-auto text-[2.4rem]">캘린더</p>
+                <p className="mx-auto text-[1.6rem] lg:text-[2.4rem]">캘린더</p>
               </button>
             </div>
           </div>
@@ -261,7 +263,7 @@ export const Heroes = () => {
             </div>
             <div className="py-[2rem]">
               {/* <div className="relative min-w-[80rem] min-h-[50rem] mx-auto"> */}
-              <div className="min-[1px]:w-[40rem] md:w-[80rem] relative mx-auto px-[4rem]">
+              <div className="w-[55rem] md:w-[80rem] relative mx-auto px-[4rem]">
                 <button
                   className="absolute z-10 left-0 w-1/2 h-full opacity-0 hover:opacity-100"
                   onClick={() => featureHandler("prev")}
@@ -340,10 +342,11 @@ export const Heroes = () => {
       <section className="py-20">
         <div className="w-full sm:max-w-[99rem] mx-auto px-[3.2rem]">
           <div className="flex flex-col justify-center align-middle text-center">
-            <h2 className="text-[3.6rem] md:text-[4.6rem] font-bold text-[rgb(18, 18, 18)] -tracking-[1.2px]">
-              수백만 명이 매일 사용하는 Notion
+            <h2 className="leading-[4rem] text-[3.6rem] md:text-[4.6rem] font-bold text-[rgb(18, 18, 18)] -tracking-[1.2px]">
+              수백만 명이 매일 사용하는{" "}
+              <span className="block sm:inline">Notion</span>
             </h2>
-            <h3 className="text-[1.6rem]">
+            <h3 className="text-[1.6rem] w-[43rem] sm:w-full mx-auto my-[0.8rem]">
               차세대 스타트업부터 기존 기업에 이르기까지 세계 최고의 팀들을
               지원합니다
             </h3>
@@ -353,67 +356,67 @@ export const Heroes = () => {
                 <ArrowRight />
               </Link>
             </div>
-            <div className="px-[1.2rem] align-middle w-[42rem] gap-4 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto">
+            <div className="md:px-[1.2rem] w-[42rem] gap-8 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto">
               {/* <div className="w-[128px] h-[20px]">
                 <Image
                   src={testimonialLg}
                   alt="lg ai research"
                   className="object-contain"
                 /> */}
-              <div className="relative sm:w-[12.8rem] sm:h-[2rem] w-[12.8rem] h-[2rem]">
+              <div className="relative sm:w-[12.8rem] sm:h-[2rem] w-[12.8rem] h-[2rem] my-auto">
                 <Image
                   src={testimonialLg}
                   alt="lg ai research"
                   // className="max-w-full object-contain h-auto"
-                  layout="responsive"
+                  // layout="responsive"
                   // fill
-                  // className="object-contain"
+                  className="object-contain"
                 />
                 {/* </div> */}
               </div>
-              <div className="w-[12.1rem] h-[2rem] ">
+              <div className="w-[12.1rem] h-[2rem] my-auto">
                 <Image
                   src={testimonialSendbird}
                   alt="lg ai research"
                   className="object-contain"
                 />
               </div>
-              <div className="w-[13.6rem] h-[2rem]">
+              <div className="w-[13.6rem] h-[2rem] my-auto">
                 <Image
                   src={testimonialHyosung}
                   alt="lg ai research"
                   className="object-contain my-auto"
                 />
               </div>
-              <div className="w-[7rem] h-[3rem]">
+              <div className="w-[7rem] h-[3rem] my-auto">
                 <Image
                   src={testimonialGs}
                   alt="lg ai research"
                   className="object-contain"
                 />
               </div>
-              <div className="w-[6.2rem] h-[4rem]">
+              <div className="w-[6.2rem] h-[4rem] my-auto">
                 <Image
                   src={testimonialDg}
                   alt="lg ai research"
                   className="object-contain"
                 />
               </div>
-              <div className="w-[9.2rem] h-[2.7rem]">
+              <div className="w-[9.2rem] h-[2.7rem] my-auto">
                 <Image
                   src={testimonialSocar}
                   alt="lg ai research"
                   className="object-contain"
                 />
               </div>
-              <div className="w-[10.9rem] h-[2.3rem]">
+              <div className="w-[10.9rem] h-[2.3rem] my-auto">
                 <Image
                   src={testimonialKakao}
                   alt="lg ai research"
                   className="object-contain"
                 />
               </div>
-              <div className="w-[5.9rem] h-[4.1rem]">
+              <div className="w-[5.9rem] h-[4.1rem] my-auto">
                 <Image
                   src={testimonialFF}
                   alt="lg ai research"
@@ -424,47 +427,55 @@ export const Heroes = () => {
           </div>
           <div className="flex flex-col justify-center align-middle text-center">
             <div className="flex justify-center align-middle">
-              <h2 className="text-[3.6rem] md:text-[4.2rem] font-bold w-4/12">
+              <h2 className="text-[3.0rem] md:text-[3.6rem] font-bold md:w-[42rem] lg:w-[50%] leading-[3.4rem] pb-[2.4rem] md:my-auto">
                 여러 툴을 통합하고 비용을 절감하세요
               </h2>
-              <div className="relative w-48 h-48 ">
+              <div className="relative w-[21.7rem] h-[18.3rem] hidden md:block">
                 <Image
                   src={testimonialPencil}
                   alt="illustration"
-                  width={200}
-                  height={100}
-                  className="absolute"
+                  // width={200}
+                  // height={100}
+                  className="absolute object-contain"
                 />
               </div>
             </div>
-            <div className="relative w-[50rem] h-[5rem] mx-auto right-[8%] sm:right-[10%]">
-              <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[30%]">
+            <div className="relative w-[50rem] h-[25rem] sm:h-[5rem] mx-auto right-[25%] md:right-[0%] sm:right-[10%] sm:py-[10rem] md:left-[-10%] md:py-[3rem]">
+              <div className="absolute w-[50rem] md:w-full h-[5rem] left-[13%] bottom-[30%] sm:bottom-[40%]">
                 <Image
                   src={testimonialPencilmark}
                   className="absolute mix-blend-multiply"
                   alt="strikethrough pencilmark"
                 />
               </div>
-              <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[50%] ">
+              <div className="absolute w-[50rem] h-[5rem] left-[13%] bottom-[35%] sm:bottom-[50%] ">
                 <Image
                   src={testimonialBeforeTools}
                   alt="other alternative tools used before notion"
                   className="absolute mix-blend-multiply"
                 />
               </div>
+              <div className="absolute right-[-35%] top-[35%] w-[11.5rem] h-[11.1rem] sm:top-[25%] md:hidden">
+                <Image
+                  src={mobileTestimonialPencil}
+                  alt="mobile illustration"
+                />
+              </div>
             </div>
             <figure className="flex flex-col justify-center align-middle px-[3.2rem]">
-              <blockquote className="text-[1.8rem] md:text-[2.4rem]">
+              <blockquote className="text-[2.4rem] w-[31rem] md:w-full mx-auto">
                 &ldquo;Notion 하나로 10개 이상의 기존 툴을 대체할 수
                 있었어요.&ldquo;
               </blockquote>
-              <figcaption className="flex justify-center align-middle gap-4 ">
-                <div className="w-[127px] h-[35px] my-auto">
+              <figcaption className="flex flex-col md:flex-row justify-center align-middle gap-4 mx-auto py-[2rem]">
+                <div className="w-[127px] h-[35px] my-auto mx-auto">
                   <Image src={testimonialMetalab} alt="metalab logo" />
                 </div>
                 <div className="text-left">
-                  <p className="text-[1.4rem] md:text-[2rem]">Justin Watt</p>
-                  <p className="text-[1.4rem] md:text-[2rem]">
+                  <p className="text-[1.4rem] md:text-[1.35rem] text-center font-bold md:text-left">
+                    Justin Watt
+                  </p>
+                  <p className="text-[1.4rem] md:text-[1.35rem]">
                     MetaLab 운영 및 마케팅팀 이사
                   </p>
                 </div>
@@ -475,28 +486,29 @@ export const Heroes = () => {
       </section>
       <section className="py-20">
         <div className="w-full lg:max-w-[99rem] px-[3.2rem] relative">
-          <h2 className="mb-[20rem] text-[4.5rem] font-bold">
+          <h2 className="mb-[10rem] md:mb-[20rem] text-[3rem] md:text-[4.5rem] font-bold">
             강력한 빌딩 블록
           </h2>
           <div className="flex flex-col gap-5">
-            <div className="hero-block px-[3rem] py-5 w-[80%] lg:w-[98rem] relative mx-auto">
+            <div className="hero-block w-[80%] py-[2rem] px-[2.4rem] md:w-[80%] lg:w-[98rem] relative mx-auto">
               <Image
-                className="absolute top-[-20%] w-[50%] h-[25%] md:h-[50%] lg:w-[22rem] lg:h-[15rem] lg:top-[-16%]"
+                className="absolute top-[-19%] w-[15.4rem] h-[10.4rem] md:top-[-12%] lg:w-[22rem] lg:h-[15rem] lg:top-[-16%]"
                 src={blockTop}
                 alt="two people peaking"
               />
               <header className="text-left py-5">
                 <Shuffle fill="#0081f2" />
-                <h3 className="text-[1.8rem] text-bold pb-5">
+                <h3 className="text-[1.8rem] text-bold pt-[2rem] pb-[0.5rem]">
                   원하는 방식으로 보기 표시, 필터링, 정렬
                 </h3>
-                <p className="text-[1.6rem] sm:w-[30rem]">
+                <p className="text-[1.6rem] w-[30rem] sm:w-full">
                   나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요.
                   어떤 프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수
                   있어요.
                 </p>
               </header>
-              <div className="w-[80%] lg:w-[92.2rem] lg:h-[57.7rem] mx-auto pb-5">
+              {/* md:w-[92.2rem] md:h-[57.7rem]  */}
+              <div className="w-[100%] mx-auto py-5">
                 {block === 0 && (
                   <Image
                     src={blockBoard}
@@ -542,7 +554,7 @@ export const Heroes = () => {
                 )}
               </div>
               <div>
-                <nav className="flex justify-center gap-5">
+                <nav className="flex justify-center gap-1 text-[1.35rem]">
                   {/* <div className="border-[0.9px] rounded-md mt-[2px]"> */}
                   <div
                     className={clsx("border-[0.9px] rounded-md mt-[2px]", {
@@ -550,7 +562,7 @@ export const Heroes = () => {
                     })}
                   >
                     <button
-                      className="py-[3.2px] px-[9.6px]"
+                      className="py-[0.32rem] px-[0.96rem]"
                       onClick={() => setBlock(0)}
                     >
                       보드
@@ -620,8 +632,8 @@ export const Heroes = () => {
                 </nav>
               </div>
             </div>
-            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] pb-[2.5rem] w-[80%] lg:w-[98rem] mx-auto">
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
+            <div className="flex justify-between flex-col md:flex-row gap-[2.4rem] md:pb-[2.5rem] w-[80%] lg:w-[98rem] mx-auto">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] md:w-[50%]">
                 <header className="text-left">
                   <Eye fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">관심 정보 지정</p>
@@ -638,7 +650,7 @@ export const Heroes = () => {
                   />
                 </div>
               </div>
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] md:w-[50%]">
                 <header className="text-left">
                   <Palette fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">
@@ -659,14 +671,15 @@ export const Heroes = () => {
               </div>
             </div>
           </div>
-
-          <figure className="w-[80%] mx-auto">
-            <blockquote className="text-[2.4rem] mx-auto w-[60%] py-[2rem]">
+          {/* w-[42rem] 
+          md:w-[98rem] */}
+          <figure className="w-[37rem] mx-auto">
+            <blockquote className="text-[2.4rem] mx-auto py-[2rem] font-normal">
               &ldquo;Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는
               만큼 간단하게 또는 정교하게 만들어 사용할 수 있어요.&ldquo;
             </blockquote>
             <figcaption className="flex flex-col md:flex-row justify-center align-middle gap-3 mx-auto">
-              <div className="w-[3.3rem] h-[3.6rem] mx-auto sm:mx-0 relative">
+              <div className="w-[3.3rem] h-[3.6rem] mx-auto relative md:mx-0">
                 <Image src={tinderIcon} alt="match group icon" fill />
               </div>
               <div className="flex flex-col justify-center align-middle text-center md:text-left ">
@@ -699,7 +712,7 @@ export const Heroes = () => {
                 <div className="hidden lg:block">
                   <Image src={teamEng} alt="feature for Engineering teams" />
                 </div>
-                <p className="text-[1.3rem] lg:text-[1.6rem] font-medium whitespace-nowrap">
+                <p className="text-[1.3rem] md:text-[1.6rem] font-medium whitespace-nowrap">
                   엔지니어링
                 </p>
               </button>
@@ -785,7 +798,7 @@ export const Heroes = () => {
             >
               <button
                 onClick={() => setTeam(5)}
-                className="py-[0.2rem] px-[0.4rem] md:pt-[1rem] md:px-[1.2rem] md:pb-[1.2rem]"
+                className="py-[0.2rem] px-[0.4rem] md:pt-[1.2rem] md:px-[1.2rem] md:pb-[1.2rem]"
               >
                 <div className="hidden lg:block">
                   <Image src={teamHr} alt="feature for Hr teams" />
@@ -796,7 +809,7 @@ export const Heroes = () => {
               </button>
             </div>
           </div>
-          <div className="flex justify-center w-[50%] lg:w-[80%] mx-auto md:px-[0.8rem]">
+          <div className="flex justify-center w-[100%] mx-auto md:px-[0.8rem]">
             {team === 0 && (
               <Image
                 src={teamEngScreenshot}
@@ -879,7 +892,7 @@ export const Heroes = () => {
         </div>
       </section> */}
       <section className="py-20">
-        <div className="w-[80%] md:w-[99rem] px-[3.2rem] mx-auto">
+        <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto">
           <h2 className="text-[4.5rem] md:text-[6.1rem] mb-4 font-bold mx-auto">
             무료로 시작하기
           </h2>
@@ -896,7 +909,7 @@ export const Heroes = () => {
               </p>
             </button>
           </div>
-          <div className="w-[80%] mx-auto">
+          <div className="mx-auto">
             <Image
               src={ctaParade}
               alt="notion parade"
