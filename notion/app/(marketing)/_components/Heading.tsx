@@ -31,22 +31,31 @@ export const Heading = () => {
             </div>
           )}
           {isAuthenticated && !isLoading && (
-            <div className="flex gap-2 justify-center">
-              <Button
-                className="hero-btn text-[1.6rem] px-[2rem] py-[1rem]"
-                asChild
-              >
-                <Link href="/documents" className="text-[1.6rem]">
-                  노션 사용하기
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </Link>
-              </Button>
-              <Button asChild>
-                <Link href="#">
-                  영업팀 문의하기
-                  <ArrowRight className="h-4 w-4 ml-2" />
-                </Link>
-              </Button>
+            <div className="flex gap-2 align-middle justify-center">
+              <div class>
+                <Button
+                  className="hero-btn px-[1.4rem] py-[.4rem] w-[15rem] h-full"
+                  // asChild
+                >
+                  <Link href="/documents" className="">
+                    <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem]">
+                      노션 사용하기
+                    </span>
+                    {/* <ArrowRight className="h-4 w-4 ml-2" /> */}
+                  </Link>
+                </Button>
+              </div>
+              <div>
+                <Button
+                  asChild
+                  className="bg-white text-[#0081f2] px-[2rem] py-[2rem]"
+                >
+                  <Link href="#">
+                    <span className="text-[1.6rem]">영업팀 문의하기</span>
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           )}
           {!isAuthenticated && !isLoading && (
