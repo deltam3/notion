@@ -32,7 +32,7 @@ export const Heading = () => {
           )}
           {isAuthenticated && !isLoading && (
             <div className="flex gap-2 align-middle justify-center">
-              <div class>
+              <div className="">
                 <Button
                   className="hero-btn px-[1.4rem] py-[.4rem] w-[15rem] h-full"
                   // asChild
