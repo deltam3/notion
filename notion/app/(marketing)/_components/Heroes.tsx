@@ -104,7 +104,7 @@ export const Heroes = () => {
   return (
     <main>
       <section className="py-20">
-        <div className="relative  w-[99rem] mx-auto">
+        <div className="relative w-[99rem] mx-auto">
           <Image src={heroPic} alt="hero" />
         </div>
       </section>
@@ -441,13 +441,11 @@ export const Heroes = () => {
                 <Image
                   src={testimonialPencil}
                   alt="illustration"
-                  // width={200}
-                  // height={100}
                   className="absolute object-contain"
                 />
               </div>
             </div>
-            <div className="relative w-[50rem] h-[25rem] sm:h-[5rem] mx-auto right-[25%] md:right-[0%] sm:right-[10%] sm:py-[10rem] md:left-[-10%] md:py-[3rem]">
+            <div className="relative w-[50rem] h-[25rem] sm:h-[5rem] mx-auto right-[15%] md:right-[0%] sm:right-[10%] sm:py-[10rem] md:left-[-10%] md:py-[3rem]">
               <div className="absolute w-[50rem] md:w-full h-[5rem] left-[13%] bottom-[30%] sm:bottom-[40%]">
                 <Image
                   src={testimonialPencilmark}
@@ -492,35 +490,37 @@ export const Heroes = () => {
         </div>
       </section>
       <section className="py-20">
-        <div className="w-full lg:max-w-[99rem] px-[3.2rem] relative">
+        <div className="w-[50%] md:w-[60%] lg:w-[99rem] max-w-[99rem] px-[3.2rem] relative mx-auto">
           <h2 className="mb-[10rem] md:mb-[20rem] text-[3rem] md:text-[4.5rem] font-bold">
             강력한 빌딩 블록
           </h2>
-          <div className="flex flex-col gap-5">
-            <div className="hero-block w-[80%] py-[2rem] px-[2.4rem] md:w-[80%] lg:w-[98rem] relative mx-auto">
-              <Image
-                className="absolute top-[-19%] w-[15.4rem] h-[10.4rem] md:top-[-12%] lg:w-[22rem] lg:h-[15rem] lg:top-[-16%]"
-                src={blockTop}
-                alt="two people peaking"
-              />
+          <div className="flex flex-col gap-5 mx-auto">
+            <div className="hero-block py-[2rem] px-[3.2rem] mx-auto relative">
+              <div className="w-full h-full absolute top-[-15%] lg:top-[-22%]">
+                <Image
+                  className="w-[30%]"
+                  src={blockTop}
+                  alt="two people peaking"
+                />
+              </div>
+
               <header className="text-left py-5">
                 <Shuffle fill="#0081f2" />
                 <h3 className="text-[1.8rem] text-bold pt-[2rem] pb-[0.5rem]">
                   원하는 방식으로 보기 표시, 필터링, 정렬
                 </h3>
-                <p className="text-[1.6rem] w-[30rem] sm:w-full">
+                <p className="text-[1.6rem]">
                   나에게 할당된 작업 또는 긴급으로 표시된 작업만 확인해 보세요.
                   어떤 프로젝트라도 나에게 맞는 방법으로 보기를 조정할 수
                   있어요.
                 </p>
               </header>
-              {/* md:w-[92.2rem] md:h-[57.7rem]  */}
-              <div className="w-[100%] mx-auto py-5">
+              <div className="mx-auto py-5">
                 {block === 0 && (
                   <Image
                     src={blockBoard}
                     alt="board feature"
-                    className="object-contain"
+                    className="w-full"
                     layout="responsive"
                   />
                 )}
@@ -528,35 +528,35 @@ export const Heroes = () => {
                   <Image
                     src={blockGraph}
                     alt="graph feature"
-                    className="object-contain"
+                    className="w-full"
                   />
                 )}
                 {block === 2 && (
                   <Image
                     src={blockTimeline}
                     alt="timeline feature"
-                    className="object-contain"
+                    className="w-full"
                   />
                 )}
                 {block === 3 && (
                   <Image
                     src={blockCalendar}
                     alt="calendar feature"
-                    className="object-contain"
+                    className="w-full"
                   />
                 )}
                 {block === 4 && (
                   <Image
                     src={blockGallery}
                     alt="gallery feature"
-                    className="object-contain"
+                    className="w-full"
                   />
                 )}
                 {block === 5 && (
                   <Image
                     src={blockList}
                     alt="list feature"
-                    className="object-contain"
+                    className="w-full"
                   />
                 )}
               </div>
@@ -639,8 +639,10 @@ export const Heroes = () => {
                 </nav>
               </div>
             </div>
-            <div className="flex justify-between flex-col md:flex-row gap-[2.4rem] md:pb-[2.5rem] w-[80%] lg:w-[98rem] mx-auto">
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] md:w-[50%]">
+            {/* </div> */}
+
+            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] lg:pb-[2.5rem] lg:px-[3.2rem] lg:px-0 mx-auto">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
                 <header className="text-left">
                   <Eye fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">관심 정보 지정</p>
@@ -653,11 +655,11 @@ export const Heroes = () => {
                   <Image
                     src={blockLeft}
                     alt="block functionality"
-                    className="p-[4px]"
+                    className="p-[4px] w-[100%]"
                   />
                 </div>
               </div>
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] md:w-[50%]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
                 <header className="text-left">
                   <Palette fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">
@@ -672,14 +674,12 @@ export const Heroes = () => {
                   <Image
                     src={blockRight}
                     alt="block functionality"
-                    className="p-[4px]"
+                    className="p-[4px] w-[100%]"
                   />
                 </div>
               </div>
             </div>
           </div>
-          {/* w-[42rem] 
-          md:w-[98rem] */}
           <figure className="w-[37rem] mx-auto">
             <blockquote className="text-[2.4rem] mx-auto py-[2rem] font-normal">
               &ldquo;Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는
@@ -816,7 +816,7 @@ export const Heroes = () => {
               </button>
             </div>
           </div>
-          <div className="flex justify-center w-[100%] mx-auto md:px-[0.8rem]">
+          <div className="flex justify-center w-[60%] lg:w-[100%] mx-auto md:px-[0.8rem]">
             {team === 0 && (
               <Image
                 src={teamEngScreenshot}
