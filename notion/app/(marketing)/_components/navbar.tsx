@@ -171,7 +171,7 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-6 max-[1024px]:flex-col",
+        "z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full px-[1.6rem] py-[1.5rem] max-[1024px]:flex-col",
         scrolled && "border-b shadow-sm"
       )}
     >
@@ -632,24 +632,27 @@ export const Navbar = () => {
             </Link>
             <span className="divider">|</span>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              {/* <Button variant="ghost" size="sm"> */}
+              <Button>
                 <span className="text-[1.5rem]">로그인</span>
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button
-                size="md"
-                className="py-[0.4rem] px-[1.1rem] text-[1.5rem]"
-              >
-                <span className="">무료로 Notion 사용하기</span>
+              <Button className="py-[0.4rem] px-[1.1rem] lg:h-[3rem]">
+                <span className="w-[13.2rem] text-[1.35rem]">
+                  무료로 Notion 사용하기
+                </span>
               </Button>
             </SignInButton>
           </>
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">노션 사용하기</Link>
+            {/* <Button variant="ghost" size="sm" asChild> */}
+            <Button className="px-[2rem] py-[1rem] bg-[#0081f2] text-white hover:bg-[#045ac4]">
+              <Link href="/documents">
+                <span className="text-[1.35rem]">노션 사용하기</span>
+              </Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>
@@ -975,9 +978,9 @@ export const Navbar = () => {
                         </li>
                         <li>
                           <p>
-                            <span className="text-[1.1rem] text-[rgba(0,0,0,.6)] px-[0.4rem]">
+                            <span className="text-[1.35rem] text-[rgba(0,0,0,.6)] px-[0.4rem]">
                               Notion (노션)은{" "}
-                              <span className="underline">
+                              <span className="underline ">
                                 사용 중인 브라우저
                               </span>
                               에서 언제든지 사용할 수 있습니다.

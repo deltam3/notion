@@ -15,28 +15,27 @@ body,
 }
 
 .hero-btn {
+  /* font-size: 13.5rem; */
   background-color: #0081f2;
 }
 
+.hero-btn:hover,
+.hero-btn:active {
+  background-color: #045ac4;
+}
+
 .feature-carousel-btn {
-  width: 1.6rem;
-  height: 1.6rem;
-  background-color: white;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
   font-weight: 400;
-}
-
-.flex-custom {
-  flex: 1 0 16%;
-}
-
-.flex-bottom {
+  color: rgb(5, 5, 5);
+  background-color: rgb(255, 255, 255);
 }
 
 .hero-block {
   background-color: var(--color-block);
   border-radius: 12px;
-  /* background-color: red; */
 }
 
 .selected-gray {
