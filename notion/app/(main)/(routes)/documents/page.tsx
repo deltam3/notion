@@ -16,6 +16,7 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
+    console.log(user);
     const promise = create({ title: "Untitled" }).then((documentId) =>
       router.push(`/documents/${documentId}`)
     );
@@ -43,12 +44,12 @@ const DocumentsPage = () => {
         alt="Empty"
         className="hidden dark:block"
       />
-      <h2 className="text-lg font-medium">
-        {user?.firstName}님 &apos;s 노션에 환영합니다.
+      <h2 className="text-[1.35rem] font-medium">
+        {user?.firstName}님 노션에 환영합니다.
       </h2>
-      <Button onClick={onCreate}>
-        <PlusCircle className="h-4 w-4 mr-2" />
-        노트 생성
+      <Button onClick={onCreate} className="text-[1.35rem] px-4 py-2">
+        <PlusCircle className="h-8 w-8 mr-4" />
+        <span>노트 생성</span>
       </Button>
     </div>
   );
