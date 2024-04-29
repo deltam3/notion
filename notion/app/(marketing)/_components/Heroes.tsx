@@ -104,8 +104,8 @@ export const Heroes = () => {
   return (
     <main>
       <section className="py-20">
-        <div className="relative w-[99rem] mx-auto">
-          <Image src={heroPic} alt="hero" />
+        <div className="relative max-w-[99rem] py-[3.2rem] mx-auto">
+          <Image src={heroPic} alt="hero" className="w-full" />
         </div>
       </section>
       <section className="section-testimonial">
@@ -116,7 +116,7 @@ export const Heroes = () => {
             </blockquote>
             <figcaption>
               <a href="#" className="flex justify-center">
-                <div className="relative w-[6.6rem] h-[1.7rem] lg:h-[5rem] lg:w-[100px]">
+                <div className="relative w-[6.6rem] h-[1.7rem] lg:h-[5rem] lg:w-[100px] ">
                   <Image
                     src="/latest/forbes.png"
                     alt="forbes logo"
@@ -270,17 +270,18 @@ export const Heroes = () => {
             </div>
             <div className="py-[2rem]">
               {/* <div className="relative min-w-[80rem] min-h-[50rem] mx-auto"> */}
-              <div className="w-[55rem] md:w-[80rem] relative mx-auto px-[4rem]">
+              <div className="max-w-[99rem] relative mx-auto px-[3.2rem]">
                 <button
-                  className="absolute z-10 left-0 w-1/2 h-full opacity-0 hover:opacity-100"
+                  className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                  // className={"absolute z-10 left-0 w-1/2 h-full opac"}
                   onClick={() => featureHandler("prev")}
                 >
-                  <div className="absolute left-7 z-20">
+                  <div className="absolute left-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
                     <ChevronLeft className="feature-carousel-btn" />
                   </div>
                 </button>
-                {/* <div className="min-w-[20rem]:w-[40rem] min-w-[80rem]:w-[80rem]"> */}
-                <div className="relative">
+                {/* <div className="min-w-[20rem]:w-[40rem] min-w-[80rem]:w-[80rem] border-[1px] border-[rgba(0, 0, 0, 0.1)]"> */}
+                <div className="relative mx-auto max-w-[80rem] max-h-[50rem]">
                   {features === 0 && (
                     <Image
                       src={featureAi}
@@ -289,6 +290,7 @@ export const Heroes = () => {
                       layout="responsive"
                       // fill
                       // className="object-contain"
+                      className="w-full"
                     />
                   )}
 
@@ -300,6 +302,7 @@ export const Heroes = () => {
                       layout="responsive"
                       // fill
                       // className="object-contain"
+                      className="w-full"
                     />
                   )}
                   {features === 2 && (
@@ -310,6 +313,7 @@ export const Heroes = () => {
                       layout="responsive"
                       // fill
                       // className="object-contain"
+                      className="w-full"
                     />
                   )}
                   {features === 3 && (
@@ -320,6 +324,7 @@ export const Heroes = () => {
                       layout="responsive"
                       // fill
                       // className="object-contain"
+                      className="w-full"
                     />
                   )}
                   {features === 4 && (
@@ -330,14 +335,16 @@ export const Heroes = () => {
                       layout="responsive"
                       // fill
                       // className="object-contain"
+                      className="w-full"
                     />
                   )}
                 </div>
+
                 <button
-                  className="absolute top-0 right-0 w-1/2 h-full opacity-0 hover:opacity-100"
+                  className="absolute top-0 right-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
                   onClick={() => featureHandler("next")}
                 >
-                  <div className="absolute right-7 z-20 top-2/2 h-full">
+                  <div className="absolute right-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
                     <ChevronRight className="feature-carousel-btn" />
                   </div>
                 </button>
@@ -363,7 +370,7 @@ export const Heroes = () => {
                 <ArrowRight />
               </Link>
             </div>
-            <div className="md:px-[1.2rem] w-[42rem] gap-8 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto">
+            <div className="md:px-[1.2rem] w-[42rem] gap-8 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto ">
               {/* <div className="w-[128px] h-[20px]">
                 <Image
                   src={testimonialLg}
@@ -445,8 +452,8 @@ export const Heroes = () => {
                 />
               </div>
             </div>
-            <div className="relative w-[50rem] h-[25rem] sm:h-[5rem] mx-auto right-[15%] md:right-[0%] sm:right-[10%] sm:py-[10rem] md:left-[-10%] md:py-[3rem]">
-              <div className="absolute w-[50rem] md:w-full h-[5rem] left-[13%] bottom-[30%] sm:bottom-[40%]">
+            <div className="relative w-[50rem] h-[25rem] sm:h-[5rem] mx-auto right-[30%] md:right-[0%] sm:right-[10%] sm:py-[10rem] md:left-[-10%] md:py-[3rem]">
+              <div className="absolute w-[50rem] md:w-full h-[5rem] left-[17%] bottom-[30%] sm:bottom-[40%]">
                 <Image
                   src={testimonialPencilmark}
                   className="absolute mix-blend-multiply"
@@ -460,7 +467,7 @@ export const Heroes = () => {
                   className="absolute mix-blend-multiply"
                 />
               </div>
-              <div className="absolute right-[-35%] top-[35%] w-[11.5rem] h-[11.1rem] sm:top-[25%] md:hidden">
+              <div className="absolute right-[-40%] top-[40%] w-[11.5rem] h-[11.1rem] sm:top-[25%] md:hidden">
                 <Image
                   src={mobileTestimonialPencil}
                   alt="mobile illustration"
@@ -490,15 +497,15 @@ export const Heroes = () => {
         </div>
       </section>
       <section className="py-20">
-        <div className="w-[50%] md:w-[60%] lg:w-[99rem] max-w-[99rem] px-[3.2rem] relative mx-auto">
+        <div className="w-[90%] max-w-[99rem] px-[3.2rem] relative mx-auto">
           <h2 className="mb-[10rem] md:mb-[20rem] text-[3rem] md:text-[4.5rem] font-bold">
             강력한 빌딩 블록
           </h2>
           <div className="flex flex-col gap-5 mx-auto">
             <div className="hero-block py-[2rem] px-[3.2rem] mx-auto relative">
-              <div className="w-full h-full absolute top-[-15%] lg:top-[-22%]">
+              <div className="absolute top-[-17%] md:top-[-16%] lg:top-[-20%]">
                 <Image
-                  className="w-[30%]"
+                  className="w-[60%] md:w-[80%] lg:w-[100%]"
                   src={blockTop}
                   alt="two people peaking"
                 />
@@ -639,14 +646,13 @@ export const Heroes = () => {
                 </nav>
               </div>
             </div>
-            {/* </div> */}
 
-            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] lg:pb-[2.5rem] lg:px-[3.2rem] lg:px-0 mx-auto">
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
+            <div className="flex justify-between flex-col lg:flex-row gap-[2.4rem] lg:pb-[2.5rem] mx-auto">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%]">
                 <header className="text-left">
                   <Eye fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">관심 정보 지정</p>
-                  <p className="max-w-[30rem] text-[1.6rem]">
+                  <p className="max-w-[40rem] text-[1.6rem]">
                     필요에 맞게 라벨, 태그, 담당자 등을 지정해 모든 사람들이
                     관련 정보를 볼 수 있게 하세요.
                   </p>
@@ -659,13 +665,13 @@ export const Heroes = () => {
                   />
                 </div>
               </div>
-              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%] lg:w-[50%]">
+              <div className="hero-block pt-[2.4rem] pl-[3.2rem] mx-auto w-[100%]">
                 <header className="text-left">
                   <Palette fill="#0081f2" />
                   <p className="text-[1.8rem] font-bold">
                     원하는 대로 페이지를 구성하고 아이디어 공유
                   </p>
-                  <p className="text-[1.6rem]">
+                  <p className="text-[1.6rem] max-w-[40rem]">
                     Notion에서는 이미지, 토글, 할 일, 임베드된 데이터베이스까지
                     모든 것이 드래그 & 드롭입니다.
                   </p>
@@ -680,6 +686,7 @@ export const Heroes = () => {
               </div>
             </div>
           </div>
+
           <figure className="w-[37rem] mx-auto">
             <blockquote className="text-[2.4rem] mx-auto py-[2rem] font-normal">
               &ldquo;Notion은 니즈에 맞는 커스텀이 가능합니다. 사용자가 원하는
@@ -698,7 +705,7 @@ export const Heroes = () => {
         </div>
       </section>
       <section className="py-20">
-        <div className="w-[80%] lg:w-[99rem] px-[0.8rem] md:px-[3.2rem] mx-auto">
+        <div className="max-w-[99rem] px-[0.8rem] md:px-[3.2rem] mx-auto">
           <h2 className="text-[3rem] pb-[2rem] md:text-[4.5rem] font-bold">
             모든 팀을 위한 협업툴
           </h2>
@@ -816,7 +823,7 @@ export const Heroes = () => {
               </button>
             </div>
           </div>
-          <div className="flex justify-center w-[60%] lg:w-[100%] mx-auto md:px-[0.8rem]">
+          <div className="flex justify-center w-[85%] lg:w-[100%] mx-auto md:px-[0.8rem] border-[1px] border-[rgba(0, 0, 0, 0.1)]">
             {team === 0 && (
               <Image
                 src={teamEngScreenshot}
