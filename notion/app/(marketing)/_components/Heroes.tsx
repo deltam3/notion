@@ -22,7 +22,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import heroPic from "../../../public/hero.jpg";
+import heroPic from "../../../public/home-hero.png";
 
 import featureAi from "../../../public/latest/features-ai.webp";
 import featureDoc from "../../../public/latest/features-document.webp";
@@ -103,8 +103,8 @@ export const Heroes = () => {
 
   return (
     <main>
-      <section className="py-20">
-        <div className="relative max-w-[99rem] py-[3.2rem] mx-auto">
+      <section className="py-2">
+        <div className="relative w-[80%] max-w-[64rem] py-[3.2rem] mx-auto">
           <Image src={heroPic} alt="hero" className="w-full" />
         </div>
       </section>
