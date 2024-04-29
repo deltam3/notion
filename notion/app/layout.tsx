@@ -2,7 +2,6 @@ import { Toaster } from "sonner";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
 const inter = Inter({ subsets: ["latin"] });
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -13,20 +12,6 @@ import { EdgeStoreProvider } from "@/lib/edgestore";
 export const metadata: Metadata = {
   title: "Notion",
   description: "Notion app to take notes",
-  icons: {
-    icon: [
-      {
-        media: "(prefers-colors-scheme: light)",
-        url: "/logo.svg",
-        href: "/logo.svg",
-      },
-      {
-        media: "(prefers-colors-scheme: dark)",
-        url: "/logo.svg",
-        href: "/logo.svg",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -35,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ko" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
           <EdgeStoreProvider>

@@ -27,8 +27,8 @@ export const UserItem = () => {
             <Avatar className="h-5 w-5">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
-            <span className="text-start font-medium line-clamp-1">
-              {user?.fullName}&apos;님의 노션
+            <span className="text-[1.4rem] font-medium line-clamp-1">
+              {user?.fullName}님의 노션
             </span>
           </div>
           <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground h-4 w-4" />
@@ -51,9 +51,7 @@ export const UserItem = () => {
               </Avatar>
             </div>
             <div className="space-y-1">
-              <p className="text-sm line-clamp-1">
-                {user?.fullName}&apos;님의 노션
-              </p>
+              <p className="text-sm line-clamp-1">{user?.fullName}님의 노션</p>
             </div>
           </div>
         </div>
