@@ -15,7 +15,13 @@ body,
 }
 
 .hero-btn {
+  /* font-size: 13.5rem; */
   background-color: #0081f2;
+}
+
+.hero-btn:hover,
+.hero-btn:active {
+  background-color: #045ac4;
 }
 
 .feature-carousel-btn {

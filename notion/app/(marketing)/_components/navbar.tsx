@@ -632,7 +632,8 @@ export const Navbar = () => {
             </Link>
             <span className="divider">|</span>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              {/* <Button variant="ghost" size="sm"> */}
+              <Button>
                 <span className="text-[1.5rem]">로그인</span>
               </Button>
             </SignInButton>
@@ -647,8 +648,11 @@ export const Navbar = () => {
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">노션 사용하기</Link>
+            {/* <Button variant="ghost" size="sm" asChild> */}
+            <Button className="px-[2rem] py-[1rem] bg-[#0081f2] text-white hover:bg-[#045ac4]">
+              <Link href="/documents">
+                <span className="text-[1.35rem]">노션 사용하기</span>
+              </Link>
             </Button>
             <UserButton afterSignOutUrl="/" />
           </>

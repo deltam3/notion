@@ -38,7 +38,7 @@ export const Heading = () => {
                   // asChild
                 >
                   <Link href="/documents" className="">
-                    <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem]">
+                    <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-white">
                       노션 사용하기
                     </span>
                     {/* <ArrowRight className="h-4 w-4 ml-2" /> */}
