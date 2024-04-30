@@ -7,8 +7,8 @@ import { SignInButton } from "@clerk/clerk-react";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
 
-// import heroVideo from "../../../public/notionhero.mp4";
-import heroSide from "../../../public/heroside.png";
+
+
 import Image from "next/image";
 
 export const Heading = () => {
@@ -35,13 +35,11 @@ export const Heading = () => {
               <div className="">
                 <Button
                   className="hero-btn px-[1.4rem] py-[.4rem] w-[15rem] h-full"
-                  // asChild
                 >
                   <Link href="/documents" className="">
                     <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-white">
                       노션 사용하기
                     </span>
-                    {/* <ArrowRight className="h-4 w-4 ml-2" /> */}
                   </Link>
                 </Button>
               </div>

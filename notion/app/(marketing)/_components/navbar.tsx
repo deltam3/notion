@@ -175,14 +175,11 @@ export const Navbar = () => {
         scrolled && "border-b shadow-sm"
       )}
     >
-      {/* <nav className="hidden md:flex"> */}
       <nav className="hidden lg:flex">
         <Logo />
 
         <NavigationMenu>
-          {/* <NavigationMenu> */}
           <NavigationMenuItem>
-            {/* <NavigationMenuItem> */}
             <NavigationMenuTrigger>
               <span className="text-[1.5rem]">프로덕트</span>
             </NavigationMenuTrigger>
@@ -193,7 +190,6 @@ export const Navbar = () => {
                     <NavigationMenuLink>
                       <Link
                         href="#"
-                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         className="flex gap-2"
                       >
                         <div>
@@ -210,7 +206,6 @@ export const Navbar = () => {
                     <NavigationMenuLink>
                       <Link
                         href="#"
-                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         className="flex gap-2"
                       >
                         <div>
@@ -227,7 +222,6 @@ export const Navbar = () => {
                     <NavigationMenuLink>
                       <Link
                         href="#"
-                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         className="flex gap-2"
                       >
                         <div>
@@ -246,7 +240,6 @@ export const Navbar = () => {
                     <NavigationMenuLink>
                       <Link
                         href="#"
-                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         className="flex gap-2"
                       >
                         <div>
@@ -265,7 +258,6 @@ export const Navbar = () => {
                     <NavigationMenuLink>
                       <Link
                         href="#"
-                        // className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         className="flex gap-2"
                       >
                         <div>
@@ -327,9 +319,7 @@ export const Navbar = () => {
                 </ul>
               </div>
             </NavigationMenuContent>
-            {/* </NavigationMenuItem> */}
           </NavigationMenuItem>
-          {/* </NavigationMenu> */}
         </NavigationMenu>
         <NavigationMenu>
           <NavigationMenuItem>
@@ -394,7 +384,6 @@ export const Navbar = () => {
                   <p className="text-[1.1rem] text-[rgba(0,0,0,.6)] tracking-[0.06rem] px-[0.8rem] my-[0.8rem]">
                     팀 규모별 솔루션
                   </p>
-                  {/* <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[300px]"> */}
                   <ul className="grid grid-cols-1 gap-3 p-4 w-[30rem] ">
                     <li>
                       <NavigationMenuLink>
@@ -463,13 +452,7 @@ export const Navbar = () => {
                     NOTION 이용대상
                   </p>
                   <ul className="grid w-[200px] gap-2 p-4 md:w-[500px] md:grid-cols-1 lg:w-[300px]">
-                    {/* {solutionSublist.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                        ></ListItem>
-                      ))} */}
+
                     <li>
                       <NavigationMenuLink>
                         <Link href="#" className="flex gap-1">
@@ -632,7 +615,6 @@ export const Navbar = () => {
             </Link>
             <span className="divider">|</span>
             <SignInButton mode="modal">
-              {/* <Button variant="ghost" size="sm"> */}
               <Button>
                 <span className="text-[1.5rem]">로그인</span>
               </Button>
@@ -648,7 +630,6 @@ export const Navbar = () => {
         )}
         {isAuthenticated && !isLoading && (
           <>
-            {/* <Button variant="ghost" size="sm" asChild> */}
             <Button className="px-[2rem] py-[1rem] bg-[#0081f2] text-white hover:bg-[#045ac4]">
               <Link href="/documents">
                 <span className="text-[1.35rem]">노션 사용하기</span>
@@ -657,7 +638,6 @@ export const Navbar = () => {
             <UserButton afterSignOutUrl="/" />
           </>
         )}
-        {/* <ModeToggle /> */}
       </div>
       <div className="hidden max-[1024px]:flex justify-between align-middle w-full mb-[1rem]">
         <Logo />
@@ -765,10 +745,7 @@ export const Navbar = () => {
                   </nav>
                 )}
               </li>
-              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
-                <p>솔루션</p>
 
-              </li> */}
               <li
                 className="w-full border-t-[1px] my-[1rem]"
                 onClick={() => mobileMenuHandler(1)}
@@ -992,9 +969,7 @@ export const Navbar = () => {
                   </nav>
                 )}
               </li>
-              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
-                <p>요금제</p>
-              </li> */}
+
               <li className="w-full border-t-[1px] my-[1rem]">
                 <div className="flex align-middle justify-between h-[6rem]">
                   <p className="text-[1.6rem] font-bold my-auto">
@@ -1002,9 +977,7 @@ export const Navbar = () => {
                   </p>
                 </div>
               </li>
-              {/* <li className="w-full border-t-[1px] pt-[1rem] my-[1rem]">
-                <p>영업팀 문의하기</p>
-              </li> */}
+    
               <li className="w-full border-t-[1px] border-b-[1px] my-[1rem]">
                 <div className="flex align-middle justify-between h-[6rem]">
                   <p className="text-[1.6rem] font-bold my-auto">
@@ -1029,73 +1002,6 @@ export const Navbar = () => {
     </header>
   );
 };
-
-// export function NavigationMenuDemo() {
-//   return (
-//     <NavigationMenu>
-//       <NavigationMenuList>
-//         <NavigationMenuItem>
-//           <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-//           <NavigationMenuContent>
-//             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-//               <li className="row-span-3">
-//                 <NavigationMenuLink asChild>
-//                   <a
-//                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-//                     href="/"
-//                   >
-//                     <Icons.logo className="h-6 w-6" />
-//                     <div className="mb-2 mt-4 text-lg font-medium">
-//                       shadcn/ui
-//                     </div>
-//                     <p className="text-sm leading-tight text-muted-foreground">
-//                       Beautifully designed components that you can copy and
-//                       paste into your apps. Accessible. Customizable. Open
-//                       Source.
-//                     </p>
-//                   </a>
-//                 </NavigationMenuLink>
-//               </li>
-//               <ListItem href="/docs" title="Introduction">
-//                 Re-usable components built using Radix UI and Tailwind CSS.
-//               </ListItem>
-//               <ListItem href="/docs/installation" title="Installation">
-//                 How to install dependencies and structure your app.
-//               </ListItem>
-//               <ListItem href="/docs/primitives/typography" title="Typography">
-//                 Styles for headings, paragraphs, lists...etc
-//               </ListItem>
-//             </ul>
-//           </NavigationMenuContent>
-//         </NavigationMenuItem>
-
-//         <NavigationMenuItem>
-//           <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-//           <NavigationMenuContent>
-//             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-//               {components.map((component) => (
-//                 <ListItem
-//                   key={component.title}
-//                   title={component.title}
-//                   href={component.href}
-//                 >
-//                   {component.description}
-//                 </ListItem>
-//               ))}
-//             </ul>
-//           </NavigationMenuContent>
-//         </NavigationMenuItem>
-//         <NavigationMenuItem>
-//           <Link href="/docs" legacyBehavior passHref>
-//             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-//               Documentation
-//             </NavigationMenuLink>
-//           </Link>
-//         </NavigationMenuItem>
-//       </NavigationMenuList>
-//     </NavigationMenu>
-//   );
-// }
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

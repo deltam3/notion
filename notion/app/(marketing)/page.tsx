@@ -15,5 +15,3 @@ const MarketingPage = () => {
 };
 
 export default MarketingPage;
-
-//px-6

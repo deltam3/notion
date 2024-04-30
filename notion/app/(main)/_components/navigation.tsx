@@ -46,8 +46,6 @@ export const Navigation = () => {
   const [isResetting, setIsResetting] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(isMobile);
 
-  // const documents = useQuery(api.documents.get);
-
   useEffect(() => {
     if (isMobile) {
       collapse();

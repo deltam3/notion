@@ -113,7 +113,7 @@ export const Item = ({
           className="h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 mr-1"
           onClick={handleExpand}
         >
-          <ChevronIcon className="h-4 w-4 shrink-0 text-muted-foreground/50" />
+          <ChevronIcon className="h-[1.6rem] w-[1.6rem] shrink-0 text-muted-foreground/50" />
         </div>
       )}
       {documentIcon ? (
@@ -135,7 +135,7 @@ export const Item = ({
                 role="button"
                 className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600"
               >
-                <MoreHorizontal className="h-4 w-4 text-muted-foreground" />
+                <MoreHorizontal className="h-[1.6rem] w-[1.6rem] text-muted-foreground" />
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent
@@ -145,7 +145,7 @@ export const Item = ({
               forceMount
             >
               <DropdownMenuItem onClick={onArchive}>
-                <Trash className="h-4 w-4 mr-2" />
+                <Trash className="h-[1.6rem] w-[1.6rem] mr-2" />
                 삭제
               </DropdownMenuItem>
               <DropdownMenuSeparator />
@@ -157,9 +157,9 @@ export const Item = ({
           <div
             role="button"
             onClick={onCreate}
-            className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600"
+            className="opacity-0 group-hover:opacity-100 h-full ml-auto rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600 w-[1.6rem] "
           >
-            <Plus className="h-4 w-4 text-muted-foreground" />
+            <Plus className="h-[1.6rem] w-[1.6rem] text-muted-foreground" />
           </div>
         </div>
       )}

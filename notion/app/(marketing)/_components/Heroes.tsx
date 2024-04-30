@@ -269,27 +269,21 @@ export const Heroes = () => {
               )}
             </div>
             <div className="py-[2rem]">
-              {/* <div className="relative min-w-[80rem] min-h-[50rem] mx-auto"> */}
               <div className="max-w-[99rem] relative mx-auto px-[3.2rem]">
                 <button
                   className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
-                  // className={"absolute z-10 left-0 w-1/2 h-full opac"}
                   onClick={() => featureHandler("prev")}
                 >
                   <div className="absolute left-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
                     <ChevronLeft className="feature-carousel-btn" />
                   </div>
                 </button>
-                {/* <div className="min-w-[20rem]:w-[40rem] min-w-[80rem]:w-[80rem] border-[1px] border-[rgba(0, 0, 0, 0.1)]"> */}
                 <div className="relative mx-auto max-w-[80rem] max-h-[50rem]">
                   {features === 0 && (
                     <Image
                       src={featureAi}
                       alt="ai feature"
-                      // className="max-w-full object-contain h-auto"
                       layout="responsive"
-                      // fill
-                      // className="object-contain"
                       className="w-full"
                     />
                   )}
@@ -298,10 +292,7 @@ export const Heroes = () => {
                     <Image
                       src={featureDoc}
                       alt="document feature"
-                      // className="max-w-full object-contain h-auto"
                       layout="responsive"
-                      // fill
-                      // className="object-contain"
                       className="w-full"
                     />
                   )}
@@ -309,10 +300,7 @@ export const Heroes = () => {
                     <Image
                       src={featureWiki}
                       alt="wiki feature"
-                      // className="max-w-full object-contain h-auto"
                       layout="responsive"
-                      // fill
-                      // className="object-contain"
                       className="w-full"
                     />
                   )}
@@ -320,10 +308,7 @@ export const Heroes = () => {
                     <Image
                       src={featureProject}
                       alt="project feature"
-                      // className="max-w-full object-contain h-auto"
                       layout="responsive"
-                      // fill
-                      // className="object-contain"
                       className="w-full"
                     />
                   )}
@@ -331,10 +316,7 @@ export const Heroes = () => {
                     <Image
                       src={featureCalendar}
                       alt="calendar feature"
-                      // className="max-w-full object-contain h-auto"
                       layout="responsive"
-                      // fill
-                      // className="object-contain"
                       className="w-full"
                     />
                   )}
@@ -371,22 +353,14 @@ export const Heroes = () => {
               </Link>
             </div>
             <div className="md:px-[1.2rem] w-[42rem] gap-8 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto ">
-              {/* <div className="w-[128px] h-[20px]">
-                <Image
-                  src={testimonialLg}
-                  alt="lg ai research"
-                  className="object-contain"
-                /> */}
+
               <div className="relative sm:w-[12.8rem] sm:h-[2rem] w-[12.8rem] h-[2rem] my-auto">
                 <Image
                   src={testimonialLg}
                   alt="lg ai research"
-                  // className="max-w-full object-contain h-auto"
-                  // layout="responsive"
-                  // fill
+
                   className="object-contain"
                 />
-                {/* </div> */}
               </div>
               <div className="w-[12.1rem] h-[2rem] my-auto">
                 <Image
@@ -569,7 +543,6 @@ export const Heroes = () => {
               </div>
               <div>
                 <nav className="flex justify-center gap-1 text-[1.35rem]">
-                  {/* <div className="border-[0.9px] rounded-md mt-[2px]"> */}
                   <div
                     className={clsx("border-[0.9px] rounded-md mt-[2px]", {
                       "selected-gray": block === 0,
@@ -712,7 +685,6 @@ export const Heroes = () => {
           <div className="flex justify-center pb-[2.5rem] gap-2 md:gap-5 lg:gap-10 w-[60%] lg:w-[80%] mx-auto">
             <div
               className={clsx(
-                // "hero-block pt-[1rem] px-[1.2rem] pb-[1.2rem] md:w-[15.7rem] md:h-[12.5rem]",
                 "hero-block my-auto",
                 {
                   "selected-white": team === 0,
@@ -869,42 +841,7 @@ export const Heroes = () => {
           </div>
         </div>
       </section>
-      {/* <section className="py-20">
-        <div className="max-w-[99rem] px-[3.2rem]">
-          <div className="flex flex-col justify-center text-center max-w-[66rem] mx-auto">
-            <div className="max-w-[66rem] mx-auto">
-              <h2 className="text-[4.5rem] leading-[4.9rem] -tracking-[0.12rem] font-bold">
-                글로벌 커뮤니티와 함께 창의성을 발휘하세요
-              </h2>
-              <p className="text-[1.6rem]">
-                활발한 Notion 커뮤니티에서는 콘텐츠를 만들고, 트레이닝 코스를
-                제공하고, 이벤트를 주최하는 등의 활동을 주도합니다.
-              </p>
-              <Link href="#" className="flex justify-center align-middle">
-                <span className="text-blue-600 my-auto">자세히 알아보기</span>
-                <ArrowRight fill="blue" />
-              </Link>
-            </div>
-          </div>
-          <div className="">
-            <Image src={communityFaces} alt="notion users" />
-          </div>
-          <div className="flex justify-center gap-3">
-            <div className="hero-block">
-              <p>1M+</p>
-              <p>커뮤니티 멤버</p>
-            </div>
-            <div className="hero-block">
-              <p>150+</p>
-              <p>커뮤니티 그룹</p>
-            </div>
-            <div className="hero-block">
-              <p>50+</p>
-              <p>함께하는 국가</p>
-            </div>
-          </div>
-        </div>
-      </section> */}
+
       <section className="py-20">
         <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto">
           <h2 className="text-[4.5rem] md:text-[6.1rem] mb-4 font-bold mx-auto">
