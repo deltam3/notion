@@ -42,13 +42,13 @@ export const Banner = ({ documentId }: BannerProps) => {
   };
 
   return (
-    <div className="w-full bg-rose-500 text-center text-sm p-2 text-white flex items-center gap-x-2 justify-center">
+    <div className="w-full bg-rose-500 text-center text-[1.4rem] p-2 text-white flex items-center gap-x-2 justify-center">
       <p>이 페이지는 쓰레기통에 있습니다.</p>
       <Button
         size="sm"
         onClick={onRestore}
         variant="outline"
-        className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal"
+        className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal text-[1.4rem]"
       >
         페이지 복구
       </Button>
@@ -56,7 +56,7 @@ export const Banner = ({ documentId }: BannerProps) => {
         <Button
           size="sm"
           variant="outline"
-          className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal"
+          className="border-white bg-transparent hover:bg-primary/5 text-white hover:text-white p-1 px-2 h-auto font-normal text-[1.4rem]"
         >
           영구 삭제
         </Button>
