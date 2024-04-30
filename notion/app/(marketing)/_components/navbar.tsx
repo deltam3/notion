@@ -188,10 +188,7 @@ export const Navbar = () => {
                 <ul className="grid border-r-[1px] w-[50%] gap-3 grid-cols-1 py-[1rem] px-[2rem]">
                   <li>
                     <NavigationMenuLink>
-                      <Link
-                        href="#"
-                        className="flex gap-2"
-                      >
+                      <Link href="#" className="flex gap-2">
                         <div>
                           <Sparkle fill="purple" />
                         </div>
@@ -204,10 +201,7 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavigationMenuLink>
-                      <Link
-                        href="#"
-                        className="flex gap-2"
-                      >
+                      <Link href="#" className="flex gap-2">
                         <div>
                           <FileText fill="orange" />
                         </div>
@@ -220,10 +214,7 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavigationMenuLink>
-                      <Link
-                        href="#"
-                        className="flex gap-2"
-                      >
+                      <Link href="#" className="flex gap-2">
                         <div>
                           <BookOpenText fill="red" />
                         </div>
@@ -238,10 +229,7 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavigationMenuLink>
-                      <Link
-                        href="#"
-                        className="flex gap-2"
-                      >
+                      <Link href="#" className="flex gap-2">
                         <div>
                           <Target fill="blue" />
                         </div>
@@ -256,10 +244,7 @@ export const Navbar = () => {
                   </li>
                   <li>
                     <NavigationMenuLink>
-                      <Link
-                        href="#"
-                        className="flex gap-2"
-                      >
+                      <Link href="#" className="flex gap-2">
                         <div>
                           <Calendar fill="red" />
                         </div>
@@ -452,7 +437,6 @@ export const Navbar = () => {
                     NOTION 이용대상
                   </p>
                   <ul className="grid w-[200px] gap-2 p-4 md:w-[500px] md:grid-cols-1 lg:w-[300px]">
-
                     <li>
                       <NavigationMenuLink>
                         <Link href="#" className="flex gap-1">
@@ -615,12 +599,12 @@ export const Navbar = () => {
             </Link>
             <span className="divider">|</span>
             <SignInButton mode="modal">
-              <Button>
+              <Button className="bg-white text-[black] hover:bg-gray">
                 <span className="text-[1.5rem]">로그인</span>
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button className="py-[0.4rem] px-[1.1rem] lg:h-[3rem]">
+              <Button className="py-[0.4rem] px-[1.1rem] lg:h-[3rem] hover:bg-gray-600 rounded-md">
                 <span className="w-[13.2rem] text-[1.35rem]">
                   무료로 Notion 사용하기
                 </span>
@@ -630,7 +614,7 @@ export const Navbar = () => {
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button className="px-[2rem] py-[1rem] bg-[#0081f2] text-white hover:bg-[#045ac4]">
+            <Button className="px-[1.1rem] py-[0.4rem] text-white hover:bg-gray-600 rounded-md min-w-[10rem]">
               <Link href="/documents">
                 <span className="text-[1.35rem]">노션 사용하기</span>
               </Link>
@@ -977,7 +961,7 @@ export const Navbar = () => {
                   </p>
                 </div>
               </li>
-    
+
               <li className="w-full border-t-[1px] border-b-[1px] my-[1rem]">
                 <div className="flex align-middle justify-between h-[6rem]">
                   <p className="text-[1.6rem] font-bold my-auto">
@@ -985,14 +969,33 @@ export const Navbar = () => {
                   </p>
                 </div>
               </li>
+
               <li className="w-full mt-[2rem] ">
                 <div className="flex flex-col gap-4">
-                  <button className="text-[white] bg-black text-[1.6rem] py-[1rem]">
-                    무료로 Notion 사용하기
+                  <button className="text-[white] bg-black text-[1.6rem] py-[1rem] !hover:bg-black w-full">
+                    {isAuthenticated ? (
+                      <Link href="/documents" className="">
+                        <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-white hover:bg-black">
+                          노션 사용하기
+                        </span>
+                      </Link>
+                    ) : (
+                      <SignInButton mode="modal" className="w-full">
+                        <Button className="hover:bg-black">
+                          <span className="text-[1.5rem]">로그인하기</span>
+                        </Button>
+                      </SignInButton>
+                    )}
                   </button>
-                  <button className="text-black bg-white text-[1.6rem] py-[1rem] border-[1px]">
-                    로그인
-                  </button>
+                  {isAuthenticated && (
+                    <button className="text-black bg-white text-[1.6rem] py-[1rem] border-[1px]">
+                      <Link href="/documents" className="">
+                        <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-black">
+                          로그인
+                        </span>
+                      </Link>
+                    </button>
+                  )}
                 </div>
               </li>
             </ul>

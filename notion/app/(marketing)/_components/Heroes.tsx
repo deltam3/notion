@@ -353,12 +353,10 @@ export const Heroes = () => {
               </Link>
             </div>
             <div className="md:px-[1.2rem] w-[42rem] gap-8 md:w-full flex sm:gap-3 md:gap-10 flex-row justify-center align-middle flex-wrap max-w-[82rem] py-20 my-0 mx-auto ">
-
               <div className="relative sm:w-[12.8rem] sm:h-[2rem] w-[12.8rem] h-[2rem] my-auto">
                 <Image
                   src={testimonialLg}
                   alt="lg ai research"
-
                   className="object-contain"
                 />
               </div>
@@ -684,12 +682,9 @@ export const Heroes = () => {
           </h2>
           <div className="flex justify-center pb-[2.5rem] gap-2 md:gap-5 lg:gap-10 w-[60%] lg:w-[80%] mx-auto">
             <div
-              className={clsx(
-                "hero-block my-auto",
-                {
-                  "selected-white": team === 0,
-                }
-              )}
+              className={clsx("hero-block my-auto", {
+                "selected-white": team === 0,
+              })}
             >
               <button
                 onClick={() => setTeam(0)}
@@ -852,7 +847,11 @@ export const Heroes = () => {
           </p>
           <div className="flex justify-center gap-4 pb-4">
             <button className="bg-black text-white py-2 px-4 rounded-md text-[1.6rem]">
-              무료로 Notion 사용하기
+              <Link href="/documents" className="">
+                <span className="px-[1.4rem] py-[0.4rem text-white">
+                  무료로 Notion 사용하기
+                </span>
+              </Link>
             </button>
             <button className="flex align-middle">
               <p className="text-blue-600 my-auto text-[1.6rem]">

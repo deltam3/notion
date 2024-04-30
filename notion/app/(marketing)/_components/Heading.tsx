@@ -7,8 +7,6 @@ import { SignInButton } from "@clerk/clerk-react";
 import { Spinner } from "@/components/spinner";
 import Link from "next/link";
 
-
-
 import Image from "next/image";
 
 export const Heading = () => {
@@ -33,9 +31,7 @@ export const Heading = () => {
           {isAuthenticated && !isLoading && (
             <div className="flex gap-2 align-middle justify-center">
               <div className="">
-                <Button
-                  className="hero-btn px-[1.4rem] py-[.4rem] w-[15rem] h-full"
-                >
+                <Button className="hero-btn px-[1.4rem] py-[.4rem] w-[15rem] h-full">
                   <Link href="/documents" className="">
                     <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-white">
                       노션 사용하기
@@ -60,7 +56,12 @@ export const Heading = () => {
             <div className="flex gap-2 justify-center text-[1.6rem]">
               <SignInButton mode="modal">
                 <Button className="hero-btn px-[2rem] py-[2rem] rounded-lg">
-                  <span className="text-[1.6rem]">무료로 Notion 사용하기</span>
+                  {/* <span className="text-[1.6rem]">무료로 Notion 사용하기</span> */}
+                  <Link href="/documents" className="">
+                    <span className="text-[1.6rem] px-[1.4rem] py-[0.4rem text-white">
+                      무료로 노션 사용하기
+                    </span>
+                  </Link>
                   <ArrowRight className="h-4 w-4 ml-2" />
                 </Button>
               </SignInButton>
