@@ -980,7 +980,7 @@ export const Navbar = () => {
                         </span>
                       </Link>
                     ) : (
-                      <SignInButton mode="modal" className="w-full">
+                      <SignInButton mode="modal">
                         <Button className="hover:bg-black">
                           <span className="text-[1.5rem]">로그인하기</span>
                         </Button>
