@@ -150,7 +150,7 @@ export const Item = ({
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="text-xs text-muted-foreground p-2">
-                마지막으로 편집한 유저: {user?.fullName}
+                마지막으로 편집한 유저: {user?.fullName ?? "본인"}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>

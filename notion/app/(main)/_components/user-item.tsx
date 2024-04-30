@@ -42,7 +42,7 @@ export const UserItem = () => {
       >
         <div className="flex flex-col space-y-4 p-2">
           <p className="text-xs font-medium leading-none text-muted-foreground">
-            {user?.emailAddresses[0].emailAddress}
+            {user?.emailAddresses[0].emailAddress ?? "example@email.com"}
           </p>
           <div className="flex items-center gap-x-2">
             <div className="rounded-md bg-secondary p-1">
@@ -51,7 +51,9 @@ export const UserItem = () => {
               </Avatar>
             </div>
             <div className="space-y-1">
-              <p className="text-sm line-clamp-1">{user?.fullName}님의 노션</p>
+              <p className="text-sm line-clamp-1">
+                {user?.fullName ?? "유저"}님의 노션
+              </p>
             </div>
           </div>
         </div>
