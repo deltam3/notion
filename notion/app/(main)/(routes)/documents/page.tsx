@@ -45,7 +45,7 @@ const DocumentsPage = () => {
         className="hidden dark:block"
       />
       <h2 className="text-[1.35rem] font-medium">
-        {user?.firstName}님 노션에 환영합니다.
+        {user?.firstName ?? "유저"}님 노션에 환영합니다.
       </h2>
       <Button onClick={onCreate} className="text-[1.35rem] px-4 py-2">
         <PlusCircle className="h-8 w-8 mr-4" />

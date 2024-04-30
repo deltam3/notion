@@ -54,7 +54,9 @@ export const SearchCommand = () => {
 
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
-      <CommandInput placeholder={`Search ${user?.fullName}'님의 노션...`} />
+      <CommandInput
+        placeholder={`${user?.fullName ?? "유저"}님의 노션을 검색하기`}
+      />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Documents">

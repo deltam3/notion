@@ -102,6 +102,7 @@ export const create = mutation({
     return document;
   },
 });
+
 export const getTrash = query({
   handler: async (ctx) => {
     const identity = await ctx.auth.getUserIdentity();
