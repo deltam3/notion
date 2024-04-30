@@ -68,16 +68,16 @@ export const TrashBox = () => {
   return (
     <div className="text-sm">
       <div className="flex items-center gap-x-1 p-2">
-        <Search className="h-4 w-4" />
+        <Search className="h-[1.6rem] w-[1.6rem]" />
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
+          className="h-[2rem] px-2 focus-visible:ring-transparent bg-secondary text-[1.3rem]"
           placeholder="페이지 제목으로 필터하기"
         />
       </div>
       <div className="mt-2 px-1 pb-1">
-        <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
+        <p className="hidden last:block text-[1.4rem] text-center text-muted-foreground pb-2">
           발견된 문서가 없습니다.
         </p>
         {filteredDocuments?.map((document) => (
@@ -85,23 +85,25 @@ export const TrashBox = () => {
             key={document._id}
             role="button"
             onClick={() => onClick(document._id)}
-            className="text-sm rounded-sm w-full hover:bg-primary/5 flex items-center text-primary justify-between"
+            className="text-[1.4rem] rounded-sm w-full hover:bg-primary/5 flex items-center text-primary justify-between"
           >
-            <span className="truncate pl-2">{document.title}</span>
+            <span className="truncate text-[1.4rem] pl-2">
+              {document.title}
+            </span>
             <div className="flex items-center">
               <div
                 onClick={(e) => onRestore(e, document._id)}
                 role="button"
                 className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600"
               >
-                <Undo className="h-4 w-4 text-muted-foreground" />
+                <Undo className="h-[1.6rem] w-[1.6rem] text-muted-foreground" />
               </div>
               <ConfirmModal onConfirm={() => onRemove(document._id)}>
                 <div
                   role="button"
                   className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600"
                 >
-                  <Trash className="h-4 w-4 text-muted-foreground" />
+                  <Trash className="h-[1.6rem] w-[1.6rem] text-muted-foreground" />
                 </div>
               </ConfirmModal>
             </div>

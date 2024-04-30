@@ -21,10 +21,10 @@ export const UserItem = () => {
       <DropdownMenuTrigger asChild>
         <div
           role="button"
-          className="flex items-center text-sm p-3 w-full hover:bg-primary/5"
+          className="flex items-center p-3 w-full hover:bg-primary/5"
         >
           <div className="gap-x-2 flex items-center max-w-[150px]">
-            <Avatar className="h-5 w-5">
+            <Avatar className="h-[2.3rem] w-[2.2rem]">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
             <span className="text-[1.4rem] font-medium line-clamp-1">
@@ -41,17 +41,17 @@ export const UserItem = () => {
         forceMount
       >
         <div className="flex flex-col space-y-4 p-2">
-          <p className="text-xs font-medium leading-none text-muted-foreground">
+          <p className="text-[1.1rem] font-medium leading-none text-muted-foreground">
             {user?.emailAddresses[0].emailAddress ?? "example@email.com"}
           </p>
           <div className="flex items-center gap-x-2">
             <div className="rounded-md bg-secondary p-1">
-              <Avatar className="h-8 w-8">
+              <Avatar className="h-[2.2rem] w-[2.3rem]">
                 <AvatarImage src={user?.imageUrl} />
               </Avatar>
             </div>
             <div className="space-y-1">
-              <p className="text-sm line-clamp-1">
+              <p className="text-[rgb(55, 53, 47)] text-[1.4rem] line-clamp-1">
                 {user?.fullName ?? "유저"}님의 노션
               </p>
             </div>
@@ -60,9 +60,12 @@ export const UserItem = () => {
         <DropdownMenuSeparator />
         <DropdownMenuItem
           asChild
-          className="w-full cursor-pointer text-muted-foreground"
+          className="w-full cursor-pointer text-muted-foreground text-[1.4rem]"
         >
-          <SignOutButton>로그아웃</SignOutButton>
+          <SignOutButton>
+            로그아웃
+            {/* <span className="text-[1.4rem]">로그아웃</span> */}
+          </SignOutButton>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -82,7 +82,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
             variant="outline"
             size="icon"
           >
-            <X className="h-4 w-4" />
+            <X className="h-[1.4rem] w-[1.4rem]" />
           </Button>
         </div>
       )}
@@ -93,7 +93,7 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
         {!initialData.icon && !preview && (
           <IconPicker asChild onChange={onIconSelect}>
             <Button
-              className="text-muted-foreground text-xs"
+              className="text-muted-foreground text-[1.4rem]"
               variant="outline"
               size="sm"
             >
@@ -105,11 +105,11 @@ export const Toolbar = ({ initialData, preview }: ToolbarProps) => {
         {!initialData.coverImage && !preview && (
           <Button
             onClick={coverImage.onOpen}
-            className="text-muted-foreground text-xs"
+            className="text-muted-foreground text-[1.4rem]"
             variant="outline"
             size="sm"
           >
-            <ImageIcon className="h-4 w-4 mr-2" />
+            <ImageIcon className="h-[1.4rem] w-[1.4rem] mr-2" />
             커버사진 추가하기
           </Button>
         )}

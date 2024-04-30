@@ -52,9 +52,9 @@ export const Publish = ({ initialData }: PublishProps) => {
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Unpublishing...",
-      success: "Note unpublished",
-      error: "Failed to unpublish note.",
+      loading: "공유 취소중",
+      success: "노트 공유 취소 성공!",
+      error: "노트 공유 취소 실패!",
     });
   };
 
@@ -70,8 +70,8 @@ export const Publish = ({ initialData }: PublishProps) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button size="sm" variant="ghost">
-          퍼블리시
+        <Button size="sm" variant="ghost" className="text-[1.4rem]">
+          공유
           {initialData.isPublished && (
             <Globe className="text-sky-500 w-4 h-4 ml-2" />
           )}
@@ -82,13 +82,13 @@ export const Publish = ({ initialData }: PublishProps) => {
           <div className="space-y-4">
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
-              <p className="text-xs font-medium text-sky-500">
+              <p className="text-[1.4rem] font-medium text-sky-500">
                 이 노트는 모두에게 공유됩니다.
               </p>
             </div>
             <div className="flex items-center">
               <input
-                className="flex-1 px-2 text-xs border rounded-l-md h-8 bg-muted truncate"
+                className="flex-1 px-2 text-[1.4rem] border rounded-l-md h-8 bg-muted truncate"
                 value={url}
                 disabled
               />
@@ -106,25 +106,24 @@ export const Publish = ({ initialData }: PublishProps) => {
             </div>
             <Button
               size="sm"
-              className="w-full text-xs"
+              className="w-full text-[1.4rem]"
               disabled={isSubmitting}
               onClick={onUnpublish}
             >
-              퍼블리시 취소
+              공유 취소
             </Button>
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center">
             <Globe className="h-8 w-8 text-muted-foreground mb-2" />
-            <p className="text-sm font-medium mb-2">이 노트를 퍼블리시하기</p>
-            <span className="text-xs text-muted-foreground mb-4">공유하기</span>
+            <p className="text-[1.4rem] font-medium mb-2">이 노트를 공유하기</p>
             <Button
               disabled={isSubmitting}
               onClick={onPublish}
-              className="w-full text-xs"
+              className="w-full text-[1.4rem]"
               size="sm"
             >
-              퍼블리시하기
+              공유하기
             </Button>
           </div>
         )}

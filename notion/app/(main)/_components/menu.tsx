@@ -44,7 +44,7 @@ export const Menu = ({ documentId }: MenuProps) => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button size="sm" variant="ghost">
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreHorizontal className="h-[2.2rem] w-[2.3rem]" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -53,12 +53,12 @@ export const Menu = ({ documentId }: MenuProps) => {
         alignOffset={8}
         forceMount
       >
-        <DropdownMenuItem onClick={onArchive}>
-          <Trash className="h-4 w-4 mr-2" />
-          삭제
+        <DropdownMenuItem onClick={onArchive} className="text-[1.4rem]">
+          <Trash className="h-[1.6] w-[1.6rem] text-[1.4rem] mr-2" />
+          <span>삭제</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <div className="text-xs text-muted-foreground p-2">
+        <div className="text-[1.2rem] text-muted-foreground p-2">
           마지막으로 편집한 유저: {user?.fullName ?? "본인"}
         </div>
       </DropdownMenuContent>

@@ -141,9 +141,9 @@ const SingleImageDropzone = React.forwardRef<HTMLInputElement, InputProps>(
               alt={acceptedFiles[0]?.name}
             />
           ) : (
-            <div className="flex flex-col items-center justify-center text-xs text-gray-400">
-              <UploadCloudIcon className="mb-2 h-7 w-7" />
-              <div className="text-gray-400">
+            <div className="flex flex-col items-center justify-center text-[1.2rem] text-gray-400">
+              <UploadCloudIcon className="mb-2 h-[2.4rem] w-[2.4rem]" />
+              <div className="text-gray-400 ">
                 여기에 파일을 클릭하거나 드래그해서 업로드하세요.
               </div>
             </div>

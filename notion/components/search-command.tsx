@@ -55,24 +55,28 @@ export const SearchCommand = () => {
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
       <CommandInput
+        className="text-[1.8rem]"
         placeholder={`${user?.fullName ?? "유저"}님의 노션을 검색하기`}
       />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Documents">
+        <CommandEmpty>행당하는 결과가 없습니다.</CommandEmpty>
+        <CommandGroup>
           {documents?.map((document) => (
             <CommandItem
               key={document._id}
               value={`${document._id}-${document.title}`}
               title={document.title}
               onSelect={() => onSelect(document._id)}
+              className="mr-[1rem]"
             >
               {document.icon ? (
-                <p className="mr-2 text-[18px]">{document.icon}</p>
+                <p className="mr-2 h-[1.8rem] w-[1.8rem] text-[1.8rem]">
+                  {document.icon}
+                </p>
               ) : (
-                <File className="mr-2 h-4 w-4" />
+                <File className="mr-2 h-[1.8rem] w-[1.8rem]" />
               )}
-              <span>{document.title}</span>
+              <span className="text-[1.4rem]">{document.title}</span>
             </CommandItem>
           ))}
         </CommandGroup>

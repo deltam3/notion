@@ -12,12 +12,12 @@ export const SettingsModal = () => {
     <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>
       <DialogContent>
         <DialogHeader className="border-b pb-3">
-          <h2 className="text-lg font-medium">내 설정</h2>
+          <h2 className="text-[1.4rem] font-medium">내 설정</h2>
         </DialogHeader>
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-1">
-            <Label>외관</Label>
-            <span className="text-[0.8rem] text-muted-foreground">
+            <Label className="text-[1.4rem]">외관</Label>
+            <span className="text-[1.3rem] text-muted-foreground">
               노션의 외관을 개인화하세요.
             </span>
           </div>

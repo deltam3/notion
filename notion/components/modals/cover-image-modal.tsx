@@ -51,7 +51,9 @@ export const CoverImageModal = () => {
     <Dialog open={coverImage.isOpen} onOpenChange={coverImage.onClose}>
       <DialogContent>
         <DialogHeader>
-          <h2 className="text-center text-lg font-semibold">Cover Image</h2>
+          <h2 className="text-center text-[1.4rem] font-semibold">
+            커버 이미지
+          </h2>
         </DialogHeader>
         <SingleImageDropzone
           className="w-full outline-none"

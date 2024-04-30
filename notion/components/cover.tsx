@@ -45,24 +45,25 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
     >
       {!!url && <Image src={url} fill alt="Cover" className="object-cover" />}
       {url && !preview && (
-        <div className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2">
+        <div className="opacity-0 group-hover:opacity-100 absolute bottom-5 right-5 flex items-center gap-x-2 !text-[1.4rem]">
           <Button
             onClick={() => coverImage.onReplace(url)}
-            className="text-muted-foreground text-xs"
+            className="text-muted-foreground text-[1.4rem]"
             variant="outline"
             size="sm"
           >
-            <ImageIcon className="h-4 w-4 mr-2" />
-            커버사진 바꾸기
+            <ImageIcon className="h-[1.4rem] w-[1.4rem] text-[1.4rem] mr-2" />
+            <span className="text-[1.4rem]">커버사진 바꾸기</span>
           </Button>
+
           <Button
             onClick={onRemove}
-            className="text-muted-foreground text-xs"
+            className="text-muted-foreground text-[1.4rem]"
             variant="outline"
             size="sm"
           >
-            <X className="h-4 w-4 mr-2" />
-            삭제
+            <X className="h-[1.4rem] w-[1.4rem] mr-2" />
+            <span className="text-[1.4rem]">삭제</span>
           </Button>
         </div>
       )}
