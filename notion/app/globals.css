@@ -78,6 +78,10 @@ body,
 
 .community-image-container {
   grid-column: span 4;
+}
+
+.community-image-container-md {
+  grid-column: span 4;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -88,6 +92,7 @@ body,
   display: flex;
   grid-column: span 2;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -111,9 +116,8 @@ body,
 }
 
 .community-img {
-  max-width: 60.6rem;
+  /* max-width: 60.6rem; */
 }
-/* } */
 
 @media (max-width: 1024px) {
   .community-blocks-container {

@@ -956,24 +956,25 @@ export const Heroes = () => {
                 />
               </div>
             </div>
-            <div className="hero-block community-image-container">
-              <div className="py-[2rem] md:py-[4rem]">
-                <div className="max-w-[102.4rem] relative mx-auto px-[3.2rem]">
+            <div className="hero-block community-image-container md:community-image-container-md">
+              <div className="py-[2rem] md:pt-[3rem]">
+                <div className="max-w-[102.4rem] w-full relative mx-auto px-[3.2rem] md:px-[1rem] ">
                   <button
-                    className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100 md:left-[10%] lg:left-[0%]"
                     onClick={() => communityImgHandler("prev")}
                   >
                     <div className="absolute left-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
                       <ChevronLeft className="feature-carousel-btn" />
                     </div>
                   </button>
-                  <div className="relative mx-auto w-[100%] community-img">
+                  <div className="relative mx-auto w-[100%] max-w-[60.6rem] max-h-[60.6rem] community-img ">
                     {communityImg === 0 && (
                       <Image
                         src={communitySlide1}
                         alt="notion lang"
                         layout="responsive"
-                        className="w-full"
+                        className="object-contain md:object-cover lg:aspect-square w-full"
+                        // className="object-contain aspect-auto w-full"
                       />
                     )}
                     {communityImg === 1 && (
@@ -981,7 +982,7 @@ export const Heroes = () => {
                         src={communitySlide2}
                         alt="notion lang"
                         layout="responsive"
-                        className="w-full"
+                        className="object-contain md:object-cover  lg:aspect-square"
                       />
                     )}
                     {communityImg === 2 && (
@@ -989,7 +990,7 @@ export const Heroes = () => {
                         src={communitySlide3}
                         alt="notion lang"
                         layout="responsive"
-                        className="w-full"
+                        className="object-contain md:object-cover  lg:aspect-square"
                       />
                     )}
                     {communityImg === 3 && (
@@ -997,13 +998,13 @@ export const Heroes = () => {
                         src={communitySlide4}
                         alt="notion lang"
                         layout="responsive"
-                        className="w-full"
+                        className="object-contain md:object-cover  lg:aspect-square"
                       />
                     )}
                   </div>
 
                   <button
-                    className="absolute top-0 right-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    className="absolute top-0 right-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100 md:right-[10%] lg:right-[0%]"
                     onClick={() => communityImgHandler("next")}
                   >
                     <div className="absolute right-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
@@ -1012,7 +1013,7 @@ export const Heroes = () => {
                   </button>
                 </div>
               </div>
-              <div>
+              <div className="pb-[3rem]">
                 <div>
                   {communityImg === 0 && (
                     <div>
@@ -1077,7 +1078,7 @@ export const Heroes = () => {
               </div>
             </div>
             <div className="community-testimonials">
-              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial1">
+              <div className="w-full hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] md:pb-[2.4rem] community-testimonial community-testimonial1">
                 <div className="">
                   <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
@@ -1104,7 +1105,7 @@ export const Heroes = () => {
                   </div>
                 </div>
               </div>
-              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial2">
+              <div className="w-full hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] md:pb-[2.4rem] community-testimonial community-testimonial2">
                 <div className="">
                   <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
@@ -1130,7 +1131,7 @@ export const Heroes = () => {
                   </div>
                 </div>
               </div>
-              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial3">
+              <div className="w-full hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] md:pb-[2.4rem] community-testimonial community-testimonial3">
                 <div className="">
                   <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
