@@ -869,10 +869,10 @@ export const Heroes = () => {
         {/* <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto"> */}
         {/* <div className="w-[80%] md:w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto"> */}
         <div className="w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto">
-          <h2 className="text-[3.6rem] mb-4 font-bold mx-auto">
+          <h2 className="w-[80%] text-[3.6rem] mb-4 font-bold mx-auto">
             글로벌 커뮤니티와 함께 창의성을 발휘하세요
           </h2>
-          <p className="mb-4 text-[1.6rem]">
+          <p className="w-[80%] mb-4 text-[1.6rem] mx-auto">
             활발한 Notion 커뮤니티에서는 콘텐츠를 만들고, 트레이닝 코스를
             제공하고, 이벤트를 주최하는 등의 활동을 주도합니다.
           </p>

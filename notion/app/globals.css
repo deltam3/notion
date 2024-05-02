@@ -158,16 +158,19 @@ body,
 @media (max-width: 944px) {
   .community-blocks-container {
     grid-template-columns: repeat(2, 1fr);
-    width: 80%;
+    /* width: 80%; */
+    width: 90%;
     margin: 0 auto;
   }
 
   .community-3blocks {
-    grid-column: span 4;
+    /* grid-column: span 4; */
+    grid-column: span 6;
   }
 
   .community-2blocks {
-    grid-column: span 4;
+    /* grid-column: span 4; */
+    grid-column: span 6;
   }
 
   .community-placeholder {
