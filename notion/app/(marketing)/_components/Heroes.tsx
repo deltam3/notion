@@ -72,6 +72,10 @@ import teamHrScreenshot from "../../../public/latest/teamHr.webp";
 import communityFaces from "../../../public/latest/faces.png";
 import communityApp from "../../../public/latest/community-icons-V2.png";
 import communityLang from "../../../public/latest/welcome-to-notion.png";
+import communitySlide1 from "../../../public/latest/community-slide-01.png";
+import communitySlide2 from "../../../public/latest/community-slide-02.png";
+import communitySlide3 from "../../../public/latest/community-slide-03.png";
+import communitySlide4 from "../../../public/latest/community-slide-04.png";
 
 import ctaParade from "../../../public/latest/notion-parade.png";
 
@@ -102,6 +106,25 @@ export const Heroes = () => {
   };
 
   const [team, setTeam] = useState<Number>(0);
+
+  const [communityImg, setCommunityImg] = useState<Number>(0);
+
+  const communityImgHandler = (action: string) => {
+    if (action === "prev") {
+      if (+communityImg === 0) {
+        setCommunityImg(3);
+      } else {
+        setCommunityImg(+communityImg - 1);
+      }
+    }
+    if (action === "next") {
+      if (+communityImg === 3) {
+        setCommunityImg(0);
+      } else {
+        setCommunityImg(+communityImg + 1);
+      }
+    }
+  };
 
   return (
     <main>
@@ -905,7 +928,122 @@ export const Heroes = () => {
                 />
               </div>
             </div>
-            <div className="hero-block"></div>
+            <div className="hero-block">
+              <div className="py-[2rem]">
+                <div className="max-w-[99rem] relative mx-auto px-[3.2rem]">
+                  <button
+                    className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    onClick={() => communityImgHandler("prev")}
+                  >
+                    <div className="absolute left-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
+                      <ChevronLeft className="feature-carousel-btn" />
+                    </div>
+                  </button>
+                  <div className="relative mx-auto w-[90%] max-w-[80rem] max-h-[50rem]">
+                    {communityImg === 0 && (
+                      <Image
+                        src={communitySlide1}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 1 && (
+                      <Image
+                        src={communitySlide2}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 2 && (
+                      <Image
+                        src={communitySlide3}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 3 && (
+                      <Image
+                        src={communitySlide4}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                  </div>
+
+                  <button
+                    className="absolute top-0 right-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    onClick={() => communityImgHandler("next")}
+                  >
+                    <div className="absolute right-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
+                      <ChevronRight className="feature-carousel-btn" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div>
+                  {communityImg === 0 && (
+                    <div>
+                      <p>도쿄에서의 커뮤니티 모임</p>
+                    </div>
+                  )}
+                  {communityImg === 1 && (
+                    <div>
+                      <p>뉴욕의 Notion 앰배서더 행사</p>
+                    </div>
+                  )}
+                  {communityImg === 2 && (
+                    <div>
+                      <p>샌프란시스코에서 Notion 사용법 공유</p>
+                    </div>
+                  )}
+                  {communityImg === 3 && (
+                    <div>
+                      <p>런던의 커피 팝업 스토어</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="h-[3rem] w-full flex justify-center align-middle py-auto gap-[1rem]">
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 0,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 1,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 2,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 3,
+                      }
+                    )}
+                  ></div>
+                </div>
+              </div>
+            </div>
             <div className="hero-block"></div>
             <div className="hero-block"></div>
             <div className="hero-block"></div>

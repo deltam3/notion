@@ -63,6 +63,14 @@ body,
   padding: 0 0.8rem;
 }
 
+.community-unselected {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.community-selected {
+  background-color: rgb(5, 5, 5);
+}
+
 @layer base {
   :root {
     --color-block: #f6f5f4;
