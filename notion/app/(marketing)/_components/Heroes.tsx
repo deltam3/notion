@@ -865,7 +865,7 @@ export const Heroes = () => {
         </div>
       </section>
 
-      <section className="py-20 pb-[30rem] overflow-hidden">
+      <section className="py-20 ">
         {/* <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto"> */}
         {/* <div className="w-[80%] md:w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto"> */}
         <div className="w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto">
