@@ -4,6 +4,7 @@
 
 * {
   list-style: none;
+  /* overflow: hidden; */
 }
 
 html,
@@ -12,6 +13,7 @@ body,
   /* font-size: 62.25%; */
   height: 100%;
   font-size: 62.5%;
+  /* overflow: hidden; */
 }
 
 .hero-btn {

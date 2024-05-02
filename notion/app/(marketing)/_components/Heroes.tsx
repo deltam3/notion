@@ -70,6 +70,8 @@ import teamManagementScreenshot from "../../../public/latest/teamManagement.webp
 import teamHrScreenshot from "../../../public/latest/teamHr.webp";
 
 import communityFaces from "../../../public/latest/faces.png";
+import communityApp from "../../../public/latest/community-icons-V2.png";
+import communityLang from "../../../public/latest/welcome-to-notion.png";
 
 import ctaParade from "../../../public/latest/notion-parade.png";
 
@@ -278,7 +280,7 @@ export const Heroes = () => {
                     <ChevronLeft className="feature-carousel-btn" />
                   </div>
                 </button>
-                <div className="relative mx-auto max-w-[80rem] max-h-[50rem]">
+                <div className="relative mx-auto w-[90%] max-w-[80rem] max-h-[50rem]">
                   {features === 0 && (
                     <Image
                       src={featureAi}
@@ -833,6 +835,80 @@ export const Heroes = () => {
                 className="object-contain"
               />
             )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 pb-[30rem] overflow-hidden">
+        <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto">
+          <h2 className="text-[4.5rem] mb-4 font-bold mx-auto">
+            글로벌 커뮤니티와 함께 창의성을 발휘하세요
+          </h2>
+          <p className="mb-4 text-[1.6rem]">
+            활발한 Notion 커뮤니티에서는 콘텐츠를 만들고, 트레이닝 코스를
+            제공하고, 이벤트를 주최하는 등의 활동을 주도합니다.
+          </p>
+          <div className="flex justify-center gap-4 pb-4">
+            <button className="flex align-middle">
+              <p className="text-blue-600 my-auto text-[1.6rem]">
+                자세히 알아보기 &rarr;
+              </p>
+            </button>
+          </div>
+          {/* <div className="w-full relative"> */}
+          {/* <div className="absolute overflow-x-hidden w-[1024px] z-[-10] ml-[50%] translate-x-[-50%] "> */}
+          <div className="w-full min-h-[16rem]">
+            <div className="absolute overflow-x-hidden w-[1024px] z-[-10] ml-[50%] translate-x-[-50%] ">
+              <Image
+                src={communityFaces}
+                alt="notion parade"
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          <div className="grid py-[5rem]">
+            <div className="hero-block">
+              <p>1M+</p>
+              <p>커뮤니티 멤버</p>
+            </div>
+            <div className="hero-block">
+              <p>150+</p>
+              <p>커뮤니티 그룹</p>
+            </div>
+            <div className="hero-block">
+              <p>50+</p>
+              <p>함께하는 국가</p>
+            </div>
+            <div className="hero-block">
+              <p>24시간 글로벌 네트워크</p>
+              <p>149개 이상의 온라인 커뮤니티에서 팁을 공유하세요.</p>
+              <div className="relative">
+                <Image
+                  src={communityApp}
+                  className="object-contain"
+                  alt="노션 커뮤니티 어플"
+                />
+              </div>
+            </div>
+            <div className="hero-block">
+              <p>언어 선택</p>
+              <p>
+                Notion은 현재 영어, 한국어, 일본어, 프랑스어, 독일어, 스페인어
+                및 포르투갈어를 지원합니다. 앞으로 더 추가될 예정입니다!
+              </p>
+              <div className="relative w-[20rem]">
+                <Image
+                  src={communityLang}
+                  className="object-contain"
+                  alt="노션 커뮤니티 언어"
+                />
+              </div>
+            </div>
+            <div className="hero-block"></div>
+            <div className="hero-block"></div>
+            <div className="hero-block"></div>
+            <div className="hero-block"></div>
           </div>
         </div>
       </section>
