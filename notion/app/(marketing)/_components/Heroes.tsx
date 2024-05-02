@@ -70,6 +70,15 @@ import teamManagementScreenshot from "../../../public/latest/teamManagement.webp
 import teamHrScreenshot from "../../../public/latest/teamHr.webp";
 
 import communityFaces from "../../../public/latest/faces.png";
+import communityApp from "../../../public/latest/community-icons-V2.png";
+import communityLang from "../../../public/latest/welcome-to-notion.png";
+import communitySlide1 from "../../../public/latest/community-slide-01.png";
+import communitySlide2 from "../../../public/latest/community-slide-02.png";
+import communitySlide3 from "../../../public/latest/community-slide-03.png";
+import communitySlide4 from "../../../public/latest/community-slide-04.png";
+import communityDeborah from "../../../public/latest/twitter-avatar-deborah.png";
+import communityAndre from "../../../public/latest/twitter-avatar-andre.png";
+import communityOliver from "../../../public/latest/twitter-avatar-oliver.png";
 
 import ctaParade from "../../../public/latest/notion-parade.png";
 
@@ -100,6 +109,25 @@ export const Heroes = () => {
   };
 
   const [team, setTeam] = useState<Number>(0);
+
+  const [communityImg, setCommunityImg] = useState<Number>(0);
+
+  const communityImgHandler = (action: string) => {
+    if (action === "prev") {
+      if (+communityImg === 0) {
+        setCommunityImg(3);
+      } else {
+        setCommunityImg(+communityImg - 1);
+      }
+    }
+    if (action === "next") {
+      if (+communityImg === 3) {
+        setCommunityImg(0);
+      } else {
+        setCommunityImg(+communityImg + 1);
+      }
+    }
+  };
 
   return (
     <main>
@@ -278,7 +306,7 @@ export const Heroes = () => {
                     <ChevronLeft className="feature-carousel-btn" />
                   </div>
                 </button>
-                <div className="relative mx-auto max-w-[80rem] max-h-[50rem]">
+                <div className="relative mx-auto w-[90%] max-w-[80rem] max-h-[50rem]">
                   {features === 0 && (
                     <Image
                       src={featureAi}
@@ -833,6 +861,293 @@ export const Heroes = () => {
                 className="object-contain"
               />
             )}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 ">
+        {/* <div className="w-[90%] md:w-[99rem] px-[3.2rem] mx-auto"> */}
+        {/* <div className="w-[80%] md:w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto"> */}
+        <div className="w-[100%] max-w-[102.4rem] px-[3.2rem] mx-auto">
+          <h2 className="w-[80%] text-[3.6rem] mb-4 font-bold mx-auto">
+            글로벌 커뮤니티와 함께 창의성을 발휘하세요
+          </h2>
+          <p className="w-[80%] mb-4 text-[1.6rem] mx-auto">
+            활발한 Notion 커뮤니티에서는 콘텐츠를 만들고, 트레이닝 코스를
+            제공하고, 이벤트를 주최하는 등의 활동을 주도합니다.
+          </p>
+          <div className="flex justify-center gap-4 pb-4">
+            <button className="flex align-middle">
+              <p className="text-blue-600 my-auto text-[1.6rem]">
+                자세히 알아보기 &rarr;
+              </p>
+            </button>
+          </div>
+          {/* <div className="w-full relative"> */}
+          {/* <div className="absolute overflow-x-hidden w-[1024px] z-[-10] ml-[50%] translate-x-[-50%] "> */}
+          <div className="min-h-[16rem] relative">
+            <div className="absolute overflow-x-hidden  w-[1024px]  z-[-10]  ml-[50%] translate-x-[-50%]">
+              <Image
+                src={communityFaces}
+                alt="notion parade"
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          <div className="grid py-[5rem] gap-[1.6rem] community-blocks-container">
+            <div className="hero-block px-[2.4rem] py-[2rem] text-left community-3blocks">
+              <p className="community-h3">1M+</p>
+              <p className="community-h3-desc">커뮤니티 멤버</p>
+            </div>
+            <div className="hero-block  px-[2.4rem] py-[2rem] text-left community-3blocks">
+              <p className="community-h3">150+</p>
+              <p className="community-h3-desc">커뮤니티 그룹</p>
+            </div>
+            <div className="hero-block  px-[2.4rem] md:px-[3.2rem] py-[2rem] md:py-[2.4rem] text-left md:flex md:flex-col md:justify-center community-3blocks">
+              <p className="community-h3">50+</p>
+              <p className="community-h3-desc">함께하는 국가</p>
+            </div>
+            <div className="hero-block px-[2.4rem] py-[2rem] flex flex-col gap-[3rem] community-2blocks">
+              <div>
+                <p className="community-h4 ">24시간 글로벌 네트워크</p>
+                <p className="community-h4-desc">
+                  149개 이상의 온라인 커뮤니티에서 팁을 공유하세요.
+                </p>
+              </div>
+
+              <div className="relative w-[75%] ">
+                <Image
+                  src={communityApp}
+                  className="object-contain"
+                  alt="노션 커뮤니티 어플"
+                />
+              </div>
+            </div>
+            <div className="hero-block px-[2.4rem] md:px-[3.2rem] py-[2rem] md:py-[2.4rem]  flex flex-col lg:justify-between gap-[3rem] community-2blocks">
+              <div>
+                <p className="community-h4">언어 선택</p>
+                <p className="community-h4-desc">
+                  Notion은 현재 영어, 한국어, 일본어, 프랑스어, 독일어, 스페인어
+                  및 포르투갈어를 지원합니다. 앞으로 더 추가될 예정입니다!
+                </p>
+              </div>
+              <div className="relative left-[4%] top-[4%] ">
+                <Image
+                  src={communityLang}
+                  className="object-contain rounded-tl-2xl rounded-br-2xl"
+                  alt="노션 커뮤니티 언어"
+                />
+              </div>
+            </div>
+            <div className="hidden opacity-0 hero-block px-[2.4rem] py-[2rem] community-placeholder">
+              <div>
+                <p className="community-h4">언어 선택</p>
+                <p className="community-h4-desc">
+                  Notion은 현재 영어, 한국어, 일본어, 프랑스어, 독일어, 스페인어
+                  및 포르투갈어를 지원합니다. 앞으로 더 추가될 예정입니다!
+                </p>
+              </div>
+              <div className="relative left-[4%] top-[4%] ">
+                <Image
+                  src={communityLang}
+                  className="object-contain rounded-tl-2xl rounded-br-2xl"
+                  alt="노션 커뮤니티 언어"
+                />
+              </div>
+            </div>
+            <div className="hero-block community-image-container">
+              <div className="py-[2rem] md:py-[4rem]">
+                <div className="max-w-[102.4rem] relative mx-auto px-[3.2rem]">
+                  <button
+                    className="absolute z-10 left-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    onClick={() => communityImgHandler("prev")}
+                  >
+                    <div className="absolute left-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
+                      <ChevronLeft className="feature-carousel-btn" />
+                    </div>
+                  </button>
+                  <div className="relative mx-auto w-[100%] community-img">
+                    {communityImg === 0 && (
+                      <Image
+                        src={communitySlide1}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 1 && (
+                      <Image
+                        src={communitySlide2}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 2 && (
+                      <Image
+                        src={communitySlide3}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                    {communityImg === 3 && (
+                      <Image
+                        src={communitySlide4}
+                        alt="notion lang"
+                        layout="responsive"
+                        className="w-full"
+                      />
+                    )}
+                  </div>
+
+                  <button
+                    className="absolute top-0 right-0 w-1/2 h-full opacity-100 lg:opacity-0 hover:opacity-100"
+                    onClick={() => communityImgHandler("next")}
+                  >
+                    <div className="absolute right-[25%] z-20 p-[0.8rem] rounded-full border-[1px] bg-white">
+                      <ChevronRight className="feature-carousel-btn" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div>
+                  {communityImg === 0 && (
+                    <div>
+                      <p className="text-[1.6rem]">도쿄에서의 커뮤니티 모임</p>
+                    </div>
+                  )}
+                  {communityImg === 1 && (
+                    <div>
+                      <p className="text-[1.6rem]">
+                        뉴욕의 Notion 앰배서더 행사
+                      </p>
+                    </div>
+                  )}
+                  {communityImg === 2 && (
+                    <div>
+                      <p className="text-[1.6rem]">
+                        샌프란시스코에서 Notion 사용법 공유
+                      </p>
+                    </div>
+                  )}
+                  {communityImg === 3 && (
+                    <div>
+                      <p className="text-[1.6rem]">런던의 커피 팝업 스토어</p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="h-[3rem] w-full flex justify-center align-middle py-auto gap-[1rem]">
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 0,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 1,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 2,
+                      }
+                    )}
+                  ></div>
+                  <div
+                    className={clsx(
+                      "w-[0.8rem] h-[0.8rem] rounded-full community-unselected my-auto",
+                      {
+                        "community-selected": communityImg === 3,
+                      }
+                    )}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="community-testimonials">
+              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial1">
+                <div className="">
+                  <div className="flex gap-[1rem]">
+                    <div className="w-[4.8rem] h-[4.8rem]">
+                      <Image
+                        src={communityDeborah}
+                        alt="twitter user"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-[1.5rem]">Deborah Mecca</p>
+                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                    </div>
+                  </div>
+
+                  <div className="text-[1.5rem] text-left">
+                    I used to HATE documenting things. And then I started using
+                    @NotionHQ and I document a lot. A LOT A LOT. Now I just
+                    realize that it wasn't that I hated documenting, I just
+                    hated Google Docs.
+                  </div>
+                </div>
+              </div>
+              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial2">
+                <div className="">
+                  <div className="flex gap-[1rem]">
+                    <div className="w-[4.8rem] h-[4.8rem]">
+                      <Image
+                        src={communityAndre}
+                        alt="twitter user"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-[1.5rem]">Deborah Mecca</p>
+                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                    </div>
+                  </div>
+
+                  <div className="text-[1.5rem] text-left">
+                    One of the most incredible things about @NotionHQ is the
+                    dynamic community being built - creating and sharing at its
+                    best.
+                  </div>
+                </div>
+              </div>
+              <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial3">
+                <div className="">
+                  <div className="flex gap-[1rem]">
+                    <div className="w-[4.8rem] h-[4.8rem]">
+                      <Image
+                        src={communityOliver}
+                        alt="twitter user"
+                        className="w-full"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-[1.5rem]">Deborah Mecca</p>
+                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                    </div>
+                  </div>
+
+                  <div className="text-[1.5rem] text-left">
+                    @NotionHQ Truly impressed by the velocity and quality of
+                    your work. Making using Notion even more fun week after
+                    week!
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
