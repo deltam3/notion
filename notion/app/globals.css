@@ -315,6 +315,10 @@ body,
   background-color: rgb(5, 5, 5);
 }
 
+.community-notion {
+  color: rgb(27, 149, 224);
+}
+
 @layer base {
   :root {
     --color-block: #f6f5f4;
