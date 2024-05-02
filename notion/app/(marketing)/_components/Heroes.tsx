@@ -1079,7 +1079,7 @@ export const Heroes = () => {
             <div className="community-testimonials">
               <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial1">
                 <div className="">
-                  <div className="flex gap-[1rem]">
+                  <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
                       <Image
                         src={communityDeborah}
@@ -1089,21 +1089,24 @@ export const Heroes = () => {
                     </div>
                     <div>
                       <p className="text-[1.5rem]">Deborah Mecca</p>
-                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                      <p className="text-[1.5rem] text-left text-[rgba(0, 0, 0, 0.6)]">
+                        @DebMecca
+                      </p>
                     </div>
                   </div>
 
-                  <div className="text-[1.5rem] text-left">
-                    I used to HATE documenting things. And then I started using
-                    @NotionHQ and I document a lot. A LOT A LOT. Now I just
-                    realize that it wasn't that I hated documenting, I just
-                    hated Google Docs.
+                  <div className="text-[1.5rem] text-left py-[1.125rem]">
+                    I used to HATE documenting things. And then I started using{" "}
+                    <span className="community-notion">@NotionHQ</span> and I
+                    document a lot. A LOT A LOT. Now I just realize that it
+                    wasn&apos;t that I hated documenting, I just hated Google
+                    Docs.
                   </div>
                 </div>
               </div>
               <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial2">
                 <div className="">
-                  <div className="flex gap-[1rem]">
+                  <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
                       <Image
                         src={communityAndre}
@@ -1112,13 +1115,16 @@ export const Heroes = () => {
                       />
                     </div>
                     <div>
-                      <p className="text-[1.5rem]">Deborah Mecca</p>
-                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                      <p className="text-[1.5rem]">André Blackman</p>
+                      <p className="text-[1.5rem] text-left text-[rgba(0, 0, 0, 0.6)]">
+                        @mindofandre
+                      </p>
                     </div>
                   </div>
 
-                  <div className="text-[1.5rem] text-left">
-                    One of the most incredible things about @NotionHQ is the
+                  <div className="text-[1.5rem] text-left py-[1.125rem]">
+                    One of the most incredible things about{" "}
+                    <span className="community-notion">@NotionHQ</span> is the
                     dynamic community being built - creating and sharing at its
                     best.
                   </div>
@@ -1126,7 +1132,7 @@ export const Heroes = () => {
               </div>
               <div className="hero-block mx-auto px-[1.5rem] py-[1.5rem] pb-[0.5rem] community-testimonial community-testimonial3">
                 <div className="">
-                  <div className="flex gap-[1rem]">
+                  <div className="flex gap-[1rem] mb-[1.5rem]">
                     <div className="w-[4.8rem] h-[4.8rem]">
                       <Image
                         src={communityOliver}
@@ -1135,15 +1141,15 @@ export const Heroes = () => {
                       />
                     </div>
                     <div>
-                      <p className="text-[1.5rem]">Deborah Mecca</p>
-                      <p className="text-[1.5rem] text-left">@DebMecca</p>
+                      <p className="text-[1.5rem]">Oliver Peyre</p>
+                      <p className="text-[1.5rem] text-left">@opeyre</p>
                     </div>
                   </div>
 
-                  <div className="text-[1.5rem] text-left">
-                    @NotionHQ Truly impressed by the velocity and quality of
-                    your work. Making using Notion even more fun week after
-                    week!
+                  <div className="text-[1.5rem] text-left py-[1.125rem]">
+                    <span className="community-notion">@NotionHQ</span> Truly
+                    impressed by the velocity and quality of your work. Making
+                    using Notion even more fun week after week!
                   </div>
                 </div>
               </div>
