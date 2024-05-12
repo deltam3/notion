@@ -974,7 +974,6 @@ export const Heroes = () => {
                         alt="notion lang"
                         layout="responsive"
                         className="object-contain md:object-cover lg:aspect-square w-full"
-                        // className="object-contain aspect-auto w-full"
                       />
                     )}
                     {communityImg === 1 && (
