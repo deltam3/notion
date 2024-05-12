@@ -1180,7 +1180,7 @@ export const Heroes = () => {
               </p>
             </button>
           </div>
-          <div className="mx-auto">
+          <div className="mx-auto max-w-[67rem]">
             <Image
               src={ctaParade}
               alt="notion parade"

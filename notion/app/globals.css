@@ -13,7 +13,7 @@ body,
   /* font-size: 62.25%; */
   height: 100%;
   font-size: 62.5%;
-  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .hero-btn {
@@ -321,6 +321,42 @@ body,
 
 .community-notion {
   color: rgb(27, 149, 224);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  flex: 1 0 auto;
+}
+
+.footer-main {
+  column-count: 2;
+  column-gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .footer-main {
+    column-count: 3;
+  }
+}
+
+.footer-main ul {
+  margin: 0 0 36px;
+  padding: 0;
+  list-style: none;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.footer-main ul li {
+  margin-top: 0.64rem;
+  line-height: 1.35rem;
+  text-align: left;
+  cursor: pointer;
+  min-height: 21.5938px;
+  line-height: 21.6px;
+  padding: 0.5rem 0;
 }
 
 @layer base {
