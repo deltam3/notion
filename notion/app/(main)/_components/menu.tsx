@@ -58,7 +58,7 @@ export const Menu = ({ documentId }: MenuProps) => {
           <span>삭제</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <div className="text-[1.2rem] text-muted-foreground p-2">
+        <div className="text-[1.1rem] text-muted-foreground p-2">
           마지막으로 편집한 유저: {user?.fullName ?? "본인"}
         </div>
       </DropdownMenuContent>
