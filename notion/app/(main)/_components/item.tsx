@@ -145,11 +145,11 @@ export const Item = ({
               forceMount
             >
               <DropdownMenuItem onClick={onArchive}>
-                <Trash className="h-[1.6rem] w-[1.6rem] mr-2" />
-                삭제
+                <Trash className="h-[1.6rem] w-[1.6rem] mr-2 text-[1.35rem]" />
+                <p className="text-[1.35rem]">삭제</p>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <div className="text-xs text-muted-foreground p-2">
+              <div className="text-[1.15rem] text-muted-foreground p-2">
                 마지막으로 편집한 유저: {user?.fullName ?? "본인"}
               </div>
             </DropdownMenuContent>

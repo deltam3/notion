@@ -14,7 +14,7 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
-    const promise = create({ title: "Untitled" }).then((documentId) =>
+    const promise = create({ title: "제목없음" }).then((documentId) =>
       router.push(`/documents/${documentId}`)
     );
 
@@ -27,20 +27,6 @@ const DocumentsPage = () => {
 
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
-      <Image
-        src="/empty.png"
-        height="300"
-        width="300"
-        alt="Empty"
-        className="dark:hidden"
-      />
-      <Image
-        src="/empty-dark.png"
-        height="300"
-        width="300"
-        alt="Empty"
-        className="hidden dark:block"
-      />
       <h2 className="text-[1.35rem] font-medium">노션에 환영합니다.</h2>
       <Button onClick={onCreate} className="text-[1.35rem] px-4 py-2">
         <PlusCircle className="h-[1.6rem] w-[1.6rem]  mr-4" />
